@@ -46,6 +46,28 @@ input {color: blue; margin: 10px; padding:12px;}
   margin:0px;
   padding: 12px;
 }
+div {
+  border: 1px solid white;
+  padding: 12px;
+}
+.table {
+  display:table;
+  background-color: #737CA1;
+  color:white;
+  position:relative; 
+}
+.table > div {
+  display: table-row;
+}
+.table > div > div {
+  display: table-cell;
+  background-color:#737CA1;
+}
+.header {
+  display: flex;
+  
+  
+} 
 </style>
 </head>
 <body>
@@ -71,16 +93,32 @@ input {color: blue; margin: 10px; padding:12px;}
 	<option value="visa">
   </datalist></div>
   <div class="textarea">
-<textarea rows="5" cols="40">här nedan kan man göra ett val om försäkring.</textarea></div>
+<textarea rows="5" cols="40">här nedan kan man välja spelkonsol.</textarea></div>
 <form class="form">
 <input type="checkbox" name="checkbox1" id="box1"/>
-<label for="box1">ja</label>
+<label for="box1">xbox one</label>
 <input type="checkbox" name="checkbox2" id="box2"/>
-<label for="box2">nej</label>
+<label for="box2">PS4</label>
 </form>
 <input type="submit" value="slutför">
 <input type="submit" value="avbryt">
 </section>
+<section class="section2">
+<div class="table">
+   <div>
+    <div>typ</div>
+	<div>pris</div>
+   </div>
+   <div>
+    <div>xbox one</div>
+	<div>3100 sek</div>
+   </div>
+   <div> 
+    <div>playstation 4</div>
+	<div>2800 sek</div>
+   </div>
+</section>
+
 
 
 
