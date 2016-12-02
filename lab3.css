@@ -26,6 +26,7 @@ button {
 	background-color: black;
 	color: white;
 	margin: 0;
+	max-height: 45px;
 }
 button:hover {
 	background-color: orange;
@@ -92,7 +93,7 @@ input:hover {
   width: 150px;
 }
 #delete {
-	padding: 16px;
+	padding: 14px;
 	float: right;
 }
 
