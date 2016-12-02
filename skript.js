@@ -16,7 +16,7 @@ let clear = document.getElementById('clearBtn'),
 	json = document.getElementById('JSON-div'),
     userCircle = false,
     userRect = false,
-    userTri = false,
+    userTri = false,	
     clickCount = 0,
 	statusBar = document.getElementById('statusBar'),
 	statusBar1 = document.getElementById('statusBar1'),
@@ -98,15 +98,14 @@ exportBtn.addEventListener('mouseenter', function() {
 	statusBar.innerHTML ='click here to send your work to JSON';
 });
 exportBtn.addEventListener('click', function(event) {
-	json.style.display = 'block';
-	let text='';
-	for(let i=0; i < myPosistion.length; i++) {
-	let save = JSON.stringify(myPosistion[i], null, 2);
-    text = text + save;
-	json.innerHTML ='coordinates :' + text;
-
+	if(json.style.display ='none') {
+		json.style.display ='block';
+		let text = JSON.stringify(myPosistion);
+		json.innerHTML ='coordinates :' + text;
+	} else {
+	json.style.display ='none';
+	statusBar.innerHTML ='no content';
 	};
-	console.log("logg")
 	
 })
 
@@ -116,15 +115,27 @@ submitColor.addEventListener('mouseenter', function(){
 	statusBar.innerHTML ='click here if you want to add color';
 } )
 submitColor.addEventListener('click', function(event){
-	if(colorCheck == true) {
+	if(hexColor.value.length == 7 && hexColor.value != undefined) {
+		if(validColor(hexColor.value) == true ) {
+			let userInput = document.createElement('option');
+			selectColor.appendChild(userInput);
+			userInput.innerHTML =hexColor.value;
+			statusBar.innerHTML = 'you picked :' + selectColor.options[selectColor.selectedIndex].value;
+		} else {
+			statusBar.innerHTML ='not valid :';
+		}
+	}
+	
+	
+	/*if(colorCheck.value == true && userInput.value != undefined) {
     let newColor =document.createElement('option');
 	let userInput;
 	userInput = hexColor.value.toLowerCase;
 	newColor.value = userInput;
 	selectColor.appendChild(newColor);
-	newColor.innerHTML = userInput;
+	newColor.innerHTML = userInput.value;
 	statusBar.innerHTML ='you picked :' + selectColor.options[selectColor.selectedIndex].value;
-	}
+	}*/
 	
 } )
 
@@ -252,6 +263,27 @@ canvas.addEventListener('click', function (event) {
 function changeColor() {
 	context.strokeStyle = selectColor.options[selectColor.selectedIndex].value;
 }
+function validColor(list) {
+	let colorOk =['A','B','C','D','E','F','0','1','2','3','4','5','6','7','8','9'];
+	let colorCount =0;
+	list =list.toUpperCase();
+	if(list.charAt(0) == '#') {
+		for(let i=1; i<7; i++) {
+			for(let s=0; s<colorOk.length; s++) {
+				if(list.charAt(i) == colorOk[s] ){
+					colorCount++;
+					break;
+				}
+			}
+		}
+	}
+	if(colorCount == 6) {
+		return true;
+	} else {
+		return false;
+	}
+	
+}
 
 //       function som ger canvasens koordinater
 
@@ -293,39 +325,9 @@ function Circle(centerX, centerY, radius) {
         
     
 }
-   this.area = function()  {
-    return Math.PI(this.radius * this.radius);
-};
-   this.move = function(dx, dy) {
-    this.centerX=this.centerX+=dx;
-    this.centerY=this.centerY+=dy;
-};
-   this.points = function() {
-    return [{x: this.centerX, y: this.centerY}];
-};
-   this.distanceTo = function(otherCircle) {
-      let len = Math.sqrt(Math.pow(this.centerX - otherCircle.centerX, 2) 
-      + Math.pow(this.centerY - otherCircle.centerY, 2));
-      let dis = len - this.radius - otherCircle.radius;  
-      if( dis < 0) {
-        return dis;
-      }
-      else if ( dis <= 0 ) {
-        return 0;
-      }
-};
-
-   this.boundingBox = function() {
-    let littleY =this.centerY - this.radius;
-    let littleX =this.centerX - this.radius;
-    let bigY = this.centerY + this.radius;
-    let bigX = this.centerX + this.radius ;
-  
-    return new Rectangle (littleX, littleY, bigX, bigY);    
-    
     
 };
- };
+ 
 
    
 
@@ -351,31 +353,7 @@ function Triangle(x1, y1, x2, y2, x3, y3) {
 
      
 }
-this.area = function() {
-    return Math.abs((this.x1*(this.y2-this.y3) + this.x2*(this.y3 - this.y1) + this.x3*(this.y1 - this.y2))/2);
-  
-};
 
-this.move = function(dx, dy) {
-    
-    x1=this.x1+=dx;
-    x2=this.x2+=dx;
-    x3=this.x3+=dx;
-    y1=this.y1+=dy;
-    y2=this.y2+=dy;
-    y3=this.y3+=dy;
- };
-this.points = function() {
-    return [{x: this.x1, y:this.y1}, {x:this.x2, y:this.y2}, {x:this.x3, y:this.y3}];
-};
-this.boundingBox = function() {
-    let highX = Math.max(this.x1,this.x2, this.x3);
-    let lowX = Math.min(this.x1, this.x2, this.x3);
-    let highY = Math.max(this.y1, this.y2, this.y3);
-    let lowY = Math.min(this.y1, this.y2, this.y3);
-    
-    return new Rectangle(lowX, lowY, highX, highY);
-};
 };
 
     //  !! Rectangle !!
@@ -401,25 +379,5 @@ function Rectangle(x1, y1, x2, y2) {
 	context.stroke();
     
 }
-this.area = function() {
-    return  Math.sqrt(this.x1 - this.x2) * (this.y1 - this.y2) * (this.x1 - this.x2) * (this.y1 - this.y2) ;
-};
-this.move = function(dx, dy) {
-    x1=this.x1+=dx;
-    x2=this.x2+=dx;
-    y1=this.y1+=dy;
-    y2=this.y2+=dy;
- };
-this.points = function() {
-    return [{x: this.x1, y:this.y1},{x:this.x2, y:this.y2},{x:this.x2, y:this.y1}, {y:this.y2, x:this.x1}];
-};
-this.distanceTo = function(otherRectangle) {
-        let midX1 = (this.x1 + this.x2) /2;
-        let midY1 = (this.y1 + this.y2) /2;
-        let midX2 = (otherRectangle.x1 + otherRectangle.x2) /2;
-        let midY2 = (otherRectangle.y1 + otherRectangle.y2) /2;
-        let a = midX1 - midX2;
-        let b = midY1 - midY2;
-        return Math.sqrt(a*a + b*b);
-};
+
 };
