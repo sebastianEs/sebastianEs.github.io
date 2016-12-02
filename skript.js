@@ -89,6 +89,7 @@ deltBtn.addEventListener('click', function(event) {
 	userTri = false;
 	userRect = false;
 	
+	
 });
 
 //   exportera till JSON funkar ej!
@@ -126,16 +127,7 @@ submitColor.addEventListener('click', function(event){
 		}
 	}
 	
-	
-	/*if(colorCheck.value == true && userInput.value != undefined) {
-    let newColor =document.createElement('option');
-	let userInput;
-	userInput = hexColor.value.toLowerCase;
-	newColor.value = userInput;
-	selectColor.appendChild(newColor);
-	newColor.innerHTML = userInput.value;
-	statusBar.innerHTML ='you picked :' + selectColor.options[selectColor.selectedIndex].value;
-	}*/
+		
 	
 } )
 
