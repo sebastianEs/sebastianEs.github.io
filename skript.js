@@ -98,13 +98,13 @@ exportBtn.addEventListener('mouseenter', function() {
 	statusBar.innerHTML ='click here to send your work to JSON';
 });
 exportBtn.addEventListener('click', function(event) {
+	json.style.display = 'block';
 	let text='';
-	console.log("klick")
 	for(let i=0; i < myPosistion.length; i++) {
 	let save = JSON.stringify(myPosistion[i], null, 2);
     text = text + save;
 	json.innerHTML ='coordinates :' + text;
-	console.log("coords")
+
 	};
 	console.log("logg")
 	
