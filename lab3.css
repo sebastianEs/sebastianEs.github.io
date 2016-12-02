@@ -1,110 +1,4 @@
-/*body {
-  margin: 0;
-  padding: 0;
-  background: #8c8c8c;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-}
-.content {
-	display: flex;
-	flex-direction: column;
-	width: 800px;
-	background-color: #85a3e0;
-}
-.main-content {
-	display: flex;
-	flex-direction: column;
-	
-	
-}
-#statusBar, #statusBar1 {
-  border: 2px solid black;
-  width: 180px;
-  height: 37px;
-  background-color: black;
-  padding: 6px;
-  text-align: center;
- 
-}
 
-
-
-#dropdown {
-	display: flex;
-	flex-direction: column;
-}
-#menuBtn {
-  background-color: black;
-  margin: 0;
-  padding: 10px;
-  font-size: 15px;
-  cursor: pointer; 
-  float: right;
-  width: 80px;
-}
-.dropdownMenu {
-  position: relative;
-}
-.dropdownContent {
-  display: none;
-  position: absolute;
-  
-  min-width: 200px;
-  
-  
-}
-#menuBtn:hover {
-	background-color: cyan;
-}
-#JSON-div {
-	border: 2px solid navy;
-	background-color: white;
-	width: 800px;
-	height: 200px;
-	color: blue;
-	display: none;
-	
-}
-canvas {
-  border: 4px solid navy;
-  background-color: white;
-  margin-top: 15px;
-}
-button {
-  background-color: black;
-  color: blue;
-  padding: 12px;
-  
-}
-button:hover {
-	background-color: cyan;
-}
-#delete {
-	width: 110px;
-}
-p {
-	font-size: 16px;
-	color: blue;
-	
-}
-select  {
-	padding: 12px;
-	width: 110px;
-	font-size: 18px;
-	background-color: black;
-	color: blue;
-	
-}
-input {
-	padding: 12px;
-	width: 110px;
-	font-size: 18;
-	background-color: black;
-	color: blue;
-}
-*/
 
 body {
 	margin: 0;
@@ -121,7 +15,7 @@ p {
 }
 select {
 	padding: 12px;
-	width: 110px;
+	width: 130px;
 	font-size: 18px;
 	background-color: black;
 	color: white;
@@ -173,7 +67,7 @@ input:hover {
 	background-color: beige;
 	width: 850px;
 	height: 50px;
-	
+	display:none;
 
 
 }
@@ -191,13 +85,16 @@ input:hover {
 }
 #menuBtn {
   margin: 0;
-  padding: 10px;
+  padding: 14px;
   font-size: 15px;
   cursor: pointer; 
   float: right;
-  width: 80px;
+  width: 150px;
 }
-
+#delete {
+	padding: 16px;
+	float: right;
+}
 
 
 

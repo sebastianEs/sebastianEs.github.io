@@ -18,16 +18,14 @@ let clear = document.getElementById('clearBtn'),
     userRect = false,
     userTri = false,
     clickCount = 0,
-	
 	statusBar = document.getElementById('statusBar'),
 	statusBar1 = document.getElementById('statusBar1'),
 	menu = document.getElementById('menuBtn'),
 	canvas = document.getElementById('canvas'),
 	context = canvas.getContext('2d'),
 	e = document.getElementById('dropdown'),
-	myPosistion = [],
-	savedContent = [];
-	
+	myPosistion = [];
+    let colorCheck;
 
 
 	
@@ -100,25 +98,32 @@ exportBtn.addEventListener('mouseenter', function() {
 	statusBar.innerHTML ='click here to send your work to JSON';
 });
 exportBtn.addEventListener('click', function(event) {
-	statusBar.innerHTML ='canvas work exported to JSON'
-   	let work =JSON.stringify(myPosistion);
-	json.innerHTML ='coordinates :' + work;
+	let text='';
+	console.log("klick")
+	for(let i=0; i < myPosistion.length; i++) {
+	let save = JSON.stringify(myPosistion[i], null, 2);
+    text = text + save;
+	json.innerHTML ='coordinates :' + text;
+	console.log("coords")
+	};
+	console.log("logg")
 	
 })
 
-//        click och mouse events för färger, fungerar ej returnerar none
+//        click och mouse events för färger
 
 submitColor.addEventListener('mouseenter', function(){
 	statusBar.innerHTML ='click here if you want to add color';
 } )
 submitColor.addEventListener('click', function(event){
-	let colorCeck;
-	if(hexColor.value.match(hexColors) !== null){
-		statusBar.innerHTML ='you picked :' + selectColor.options[selectColor.selectedIndex].value;
-		colorCeck = true;
-	} else if (hexColor.value.math == null){
-		statusBar.innerHTML ='fail';
-		colorCeck = false;
+	if(colorCheck == true) {
+    let newColor =document.createElement('option');
+	let userInput;
+	userInput = hexColor.value.toLowerCase;
+	newColor.value = userInput;
+	selectColor.appendChild(newColor);
+	newColor.innerHTML = userInput;
+	statusBar.innerHTML ='you picked :' + selectColor.options[selectColor.selectedIndex].value;
 	}
 	
 } )
@@ -133,10 +138,23 @@ hexColor.addEventListener('mouseenter', function(){
 	statusBar.innerHTML ='add color with hex code';
 	
 } )
+hexColor.addEventListener('keyup', function(event){		
+		let dot ='';
+	    if(hexColor.value.match(hexColors) !== null){
+		statusBar.innerHTML ='this is a valid color';
+		colorCheck = true;
+		submitColor.disabled = false;
+	} else if (hexColor.value.match(hexColors) == null || hexColor.value == ''){
+		statusBar.innerHTML ='not valid';
+		colorCheck = false;
+		submitColor.disabled = true;
+	}
+	
+} )
 //      knapp för cirkel
 
 circleBtn.addEventListener('click', function(event){
-	reset();
+   reset();
    userCircle = true;
    statusBar.innerHTML = 'you chosed to draw a circle';
 });
@@ -148,7 +166,7 @@ circleBtn.addEventListener('mouseenter', function() {
 //      knapp för triangel
 
 triBtn.addEventListener('click', function(event) {
-		  reset();
+    reset();
 	userTri = true;
 	statusBar.innerHTML ='you chosed to draw a triangle';
 	console.log("triangeln lever")
@@ -166,7 +184,7 @@ rectangleBtn.addEventListener('mouseenter', function() {
 });
 
 rectangleBtn.addEventListener('click', function(event){
-		  reset();
+   reset();
    userRect = true;
    statusBar.innerHTML = 'you chosed to draw a rectangle';
   
@@ -188,37 +206,28 @@ canvas.addEventListener('click', function (event) {
 	
    if(userCircle === true && clickCount===0){
     clickCount++;
-	console.log("En cirkel är kommen")
 	myPosistion.push(cord);
-	console.log("MY POS: "+myPosistion);
     
   } else if (userCircle === true && clickCount===1) {
 	  myPosistion.push(cord);
-	  console.log("MY POS 2: "+myPosistion);
     let radius = Math.hypot(myPosistion[1][0] - myPosistion[0][0], myPosistion[1][1] - myPosistion[0][1]);
-	console.log("RADDE: "+radius);
     let circleFig = new Circle(myPosistion[0][0], myPosistion[0][1], radius);
-    console.log(circleFig)
     circleFig.draw();
     statusBar.innerHTML ='you created a Circle!';
 	clickCount = 0;
 	myPosistion = [];
 
 	
-  }    else if(userRect == true && clickCount<=0) {
+  }   else if(userRect == true && clickCount<=0) {
 	  clickCount++;
 	  myPosistion.push(cord);
-	  console.log("my pos 3: " + myPosistion);
 	  
   } else if(userRect == true && clickCount == 1) {
-	  myPosistion.push(cord);
-	  console.log("my pos 4: " + myPosistion);
+	myPosistion.push(cord);
 	let rectangleFig = new Rectangle(myPosistion[0][0], myPosistion[0][1], myPosistion[1][0], myPosistion[1][1]);
-	console.log("rect är: "+ rectangleFig)
 	rectangleFig.draw();
 	
 	statusBar.innerHTML ='you created a rectangle';
-	console.log("yey it worked");
 	clickCount= 0;
 	myPosistion = [];
 	
@@ -227,14 +236,11 @@ canvas.addEventListener('click', function (event) {
    else if(userTri == true && clickCount <= 1) {
 	  clickCount++;
 	  myPosistion.push(cord);
-	  console.log("pos 5: " + myPosistion)
   } else if(userTri == true && clickCount == 2) {
 	  myPosistion.push(cord);
   let triangleFig = new Triangle(myPosistion[0][0], myPosistion[0][1], myPosistion[1][0], myPosistion[1][1], myPosistion[2][0], myPosistion[2][1]);
-	  console.log('pos 6: ' + myPosistion);
 	  triangleFig.draw();
 	  statusBar.innerHTML = 'you created a triangle';
-	  console.log('där satt den');
       clickCount = 0;
 	  myPosistion = [];
 	 
