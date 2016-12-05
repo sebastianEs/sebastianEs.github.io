@@ -1,7 +1,5 @@
-//       canvas lab3
 
 //    !! variablar !!
-
 let clear = document.getElementById('clearBtn'),
     circleBtn = document.getElementById('circleBtn'),
     rectangleBtn = document.getElementById('rectangleBtn'),
@@ -9,34 +7,30 @@ let clear = document.getElementById('clearBtn'),
     exportBtn = document.getElementById('expoBtn'),    
     deltBtn = document.getElementById('delete'),
     expoFig = document.getElementById('exportFig'),
-	selectColor = document.getElementById('selectColor')
-	submitColor = document.getElementById('submitColor')
-	hexColor = document.getElementById('hex-color'),
+    selectColor = document.getElementById('selectColor')
+    submitColor = document.getElementById('submitColor')
+    hexColor = document.getElementById('hex-color'),
     hexColors ='^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$',
-	json = document.getElementById('JSON-div'),
+    json = document.getElementById('JSON-div'),
     userCircle = false,
     userRect = false,
-    userTri = false,	
+    userTri = false,    
     clickCount = 0,
-	statusBar = document.getElementById('statusBar'),
-	statusBar1 = document.getElementById('statusBar1'),
-	menu = document.getElementById('menuBtn'),
-	canvas = document.getElementById('canvas'),
-	context = canvas.getContext('2d'),
-	e = document.getElementById('dropdown'),
-	myPosistion = [];
+    statusBar = document.getElementById('statusBar'),
+    statusBar1 = document.getElementById('statusBar1'),
+    menu = document.getElementById('menuBtn'),
+    canvas = document.getElementById('canvas'),
+    context = canvas.getContext('2d'),
+    e = document.getElementById('dropdown'),
+    myPosistion = [];
     let colorCheck;
-
-
-	
-	
-	
-
-	
-	
+    
+    
+    
+    
+    
 //     !! events !!
 // click events på alla knappar samt mouse events för att se vad användaren gör.
-
 canvas.addEventListener('click', function(event){
   let position = currentPosition(canvas,event);
   
@@ -46,9 +40,7 @@ canvas.addEventListener('mousemove', function(evn){
   let output ='mouse position: ' + position.x + ',' + position.y;
   statusBar1.innerHTML = output;  
 });
-
 //       öppnar menyn
-
 menu.addEventListener('click', function(event){
   if( e.style.display == 'none') {
     e.style.display='block';
@@ -59,227 +51,206 @@ menu.addEventListener('click', function(event){
   }
 });
 menu.addEventListener('mouseenter', function() {
-	menu.style.cursor = 'pointer';
-	statusBar.innerHTML ='click on menu for more options';
+    menu.style.cursor = 'pointer';
+    statusBar.innerHTML ='click on menu for more options';
 });
-
 //      rensar canvasens innehåll
-
 clear.addEventListener('mouseenter', function() {
-	clear.style.cursor = 'pointer';
-	statusBar.innerHTML ='click here to clear your work';
+    clear.style.cursor = 'pointer';
+    statusBar.innerHTML ='click here to clear your work';
 });
 clear.addEventListener('click', function(event) {
-	reset();
-	context.clearRect(0,0,750,450);
-	statusBar.innerHTML ='your work has been erased';
-	console.log("allt borta?")
+    reset();
+    context.clearRect(0,0,750,450);
+    statusBar.innerHTML ='your work has been erased';
+    console.log("allt borta?")
 });
-
 //        stoppar pågående figur
-
 deltBtn.addEventListener('mouseenter', function() {
-	deltBtn.style.cursor = 'pointer';
-	statusBar.innerHTML ='click here to cancel your work';
+    deltBtn.style.cursor = 'pointer';
+    statusBar.innerHTML ='click here to cancel your work';
 });
 deltBtn.addEventListener('click', function(event) {
-	statusBar.innerHTML ='your work has been canceled';
-	myPosistion = 0;
-	userCircle = false;
-	userTri = false;
-	userRect = false;
-	
-	
+    statusBar.innerHTML ='your work has been canceled';
+    myPosistion = [];
+    userCircle = false;
+    userTri = false;
+    userRect = false;
+    
+    
 });
-
-//   exportera till JSON funkar ej!
-
 exportBtn.addEventListener('mouseenter', function() {
-	exportBtn.style.cursor = 'pointer';
-	statusBar.innerHTML ='click here to send your work to JSON';
+    exportBtn.style.cursor = 'pointer';
+    statusBar.innerHTML ='click here to send your work to JSON';
 });
+//           export to json 
 exportBtn.addEventListener('click', function(event) {
-	if(json.style.display ='none') {
-		json.style.display ='block';
-		let text = JSON.stringify(myPosistion);
-		json.innerHTML ='coordinates :' + text;
-	} else {
-	json.style.display ='none';
-	statusBar.innerHTML ='no content';
-	};
-	
-})
-
+    console.log(myPosistion);
+                if(myPosistion.length >= 0 ) {
+                let jtext ='';
+                console.log("heheheh")
+                    
+                        let text = JSON.stringify(myPosistion);
+                        jtext = jtext + text;
+                        json.value = jtext;
+                        statusBar.innerHTML='your work has been exported!';
+                        json.innerHTML ="figure coordinates are :"+JSON.stringify(myPosistion);
+                        console.log("höhöhöh")
+                        console.log(JSON.stringify(myPosistion));
+                    
+                                
+                }
+        
+    if(myPosistion.length == 0 ) {
+    console.log('neeeee')
+    statusBar.innerHTML ='no content';
+    };
+    
+});
 //        click och mouse events för färger
-
 submitColor.addEventListener('mouseenter', function(){
-	statusBar.innerHTML ='click here if you want to add color';
+    statusBar.innerHTML ='click here if you want to add color';
 } )
 submitColor.addEventListener('click', function(event){
-	if(hexColor.value.length == 7 && hexColor.value != undefined) {
-		if(validColor(hexColor.value) == true ) {
-			let userInput = document.createElement('option');
-			selectColor.appendChild(userInput);
-			userInput.innerHTML =hexColor.value;
-			statusBar.innerHTML = 'you picked :' + selectColor.options[selectColor.selectedIndex].value;
-		} else {
-			statusBar.innerHTML ='not valid :';
-		}
-	}
-	
-		
-	
+    if(hexColor.value.length == 7 && hexColor.value != undefined) {
+        if(validColor(hexColor.value) == true ) {
+            let userInput = document.createElement('option');
+            selectColor.appendChild(userInput);
+            userInput.innerHTML =hexColor.value;
+            statusBar.innerHTML = 'you picked :' + selectColor.options[selectColor.selectedIndex].value;
+        } else {
+            statusBar.innerHTML ='not valid :';
+        }
+    }
+    
+        
+    
 } )
-
-
 selectColor.addEventListener('mouseenter', function(){
-	statusBar.innerHTML = 'click here to pick color ';
+    statusBar.innerHTML = 'click here to pick color ';
 } )
-
-
 hexColor.addEventListener('mouseenter', function(){
-	statusBar.innerHTML ='add color with hex code';
-	
+    statusBar.innerHTML ='add color with hex code';
+    
 } )
-hexColor.addEventListener('keyup', function(event){		
-		let dot ='';
-	    if(hexColor.value.match(hexColors) !== null){
-		statusBar.innerHTML ='this is a valid color';
-		colorCheck = true;
-		submitColor.disabled = false;
-	} else if (hexColor.value.match(hexColors) == null || hexColor.value == ''){
-		statusBar.innerHTML ='not valid';
-		colorCheck = false;
-		submitColor.disabled = true;
-	}
-	
+hexColor.addEventListener('keyup', function(event){     
+        let dot ='';
+        if(hexColor.value.match(hexColors) !== null){
+        statusBar.innerHTML ='this is a valid color';
+        colorCheck = true;
+        submitColor.disabled = false;
+    } else if (hexColor.value.match(hexColors) == null || hexColor.value == ''){
+        statusBar.innerHTML ='not valid';
+        colorCheck = false;
+        submitColor.disabled = true;
+    }
+    
 } )
 //      knapp för cirkel
-
 circleBtn.addEventListener('click', function(event){
    reset();
    userCircle = true;
    statusBar.innerHTML = 'you chosed to draw a circle';
 });
 circleBtn.addEventListener('mouseenter', function() {
-	circleBtn.style.cursor = 'pointer';
-	statusBar.innerHTML ='click here to draw a circle';
+    circleBtn.style.cursor = 'pointer';
+    statusBar.innerHTML ='click here to draw a circle';
 });
-
 //      knapp för triangel
-
 triBtn.addEventListener('click', function(event) {
     reset();
-	userTri = true;
-	statusBar.innerHTML ='you chosed to draw a triangle';
-	console.log("triangeln lever")
+    userTri = true;
+    statusBar.innerHTML ='you chosed to draw a triangle';
+    console.log("triangeln lever")
 });
 triBtn.addEventListener('mouseenter', function(event){
-	triBtn.style.cursor ='pointer';
-	statusBar.innerHTML ='click here to draw a triangle';
+    triBtn.style.cursor ='pointer';
+    statusBar.innerHTML ='click here to draw a triangle';
 });
-
 //       knapp för rektangel
-
 rectangleBtn.addEventListener('mouseenter', function() {
-	rectangleBtn.style.cursor = 'pointer';
-	statusBar.innerHTML ='click here to draw a rectangle';
+    rectangleBtn.style.cursor = 'pointer';
+    statusBar.innerHTML ='click here to draw a rectangle';
 });
-
 rectangleBtn.addEventListener('click', function(event){
    reset();
    userRect = true;
    statusBar.innerHTML = 'you chosed to draw a rectangle';
   
 });
-
-
-
-
 // functioner för att rita på canvas 
-
-
 canvas.addEventListener('click', function (event) {
     let cord = [];
     let rect = canvas.getBoundingClientRect();
     cord.push(event.clientX - rect.left);
     cord.push(event.clientY - rect.top);
-	console.log("My cords: "+cord);
-	
-	
+    console.log("My cords: "+cord);
+    
+    
    if(userCircle === true && clickCount===0){
     clickCount++;
-	myPosistion.push(cord);
+    myPosistion.push(cord);
     
   } else if (userCircle === true && clickCount===1) {
-	  myPosistion.push(cord);
+      myPosistion.push(cord);
     let radius = Math.hypot(myPosistion[1][0] - myPosistion[0][0], myPosistion[1][1] - myPosistion[0][1]);
     let circleFig = new Circle(myPosistion[0][0], myPosistion[0][1], radius);
     circleFig.draw();
     statusBar.innerHTML ='you created a Circle!';
-	clickCount = 0;
-	myPosistion = [];
-
-	
+    clickCount = 0;
+    
   }   else if(userRect == true && clickCount<=0) {
-	  clickCount++;
-	  myPosistion.push(cord);
-	  
+      clickCount++;
+      myPosistion.push(cord);
+      
   } else if(userRect == true && clickCount == 1) {
-	myPosistion.push(cord);
-	let rectangleFig = new Rectangle(myPosistion[0][0], myPosistion[0][1], myPosistion[1][0], myPosistion[1][1]);
-	rectangleFig.draw();
-	
-	statusBar.innerHTML ='you created a rectangle';
-	clickCount= 0;
-	myPosistion = [];
-	
-	
+    myPosistion.push(cord);
+    let rectangleFig = new Rectangle(myPosistion[0][0], myPosistion[0][1], myPosistion[1][0], myPosistion[1][1]);
+    rectangleFig.draw();
+    
+    statusBar.innerHTML ='you created a rectangle';
+    clickCount= 0;
+    
+    
   } 
    else if(userTri == true && clickCount <= 1) {
-	  clickCount++;
-	  myPosistion.push(cord);
+      clickCount++;
+      myPosistion.push(cord);
   } else if(userTri == true && clickCount == 2) {
-	  myPosistion.push(cord);
+      myPosistion.push(cord);
   let triangleFig = new Triangle(myPosistion[0][0], myPosistion[0][1], myPosistion[1][0], myPosistion[1][1], myPosistion[2][0], myPosistion[2][1]);
-	  triangleFig.draw();
-	  statusBar.innerHTML = 'you created a triangle';
+      triangleFig.draw();
+      statusBar.innerHTML = 'you created a triangle';
       clickCount = 0;
-	  myPosistion = [];
-	 
+     
   }
 });
-
 //     färger till canvas figurer
-
 function changeColor() {
-	context.strokeStyle = selectColor.options[selectColor.selectedIndex].value;
+    context.strokeStyle = selectColor.options[selectColor.selectedIndex].value;
 }
 function validColor(list) {
-	let colorOk =['A','B','C','D','E','F','0','1','2','3','4','5','6','7','8','9'];
-	let colorCount =0;
-	list =list.toUpperCase();
-	if(list.charAt(0) == '#') {
-		for(let i=1; i<7; i++) {
-			for(let s=0; s<colorOk.length; s++) {
-				if(list.charAt(i) == colorOk[s] ){
-					colorCount++;
-					break;
-				}
-			}
-		}
-	}
-	if(colorCount == 6) {
-		return true;
-	} else {
-		return false;
-	}
-	
+    let colorOk =['A','B','C','D','E','F','0','1','2','3','4','5','6','7','8','9'];
+    let colorCount =0;
+    list =list.toUpperCase();
+    if(list.charAt(0) == '#') {
+        for(let i=1; i<7; i++) {
+            for(let s=0; s<colorOk.length; s++) {
+                if(list.charAt(i) == colorOk[s] ){
+                    colorCount++;
+                    break;
+                }
+            }
+        }
+    }
+    if(colorCount == 6) {
+        return true;
+    } else {
+        return false;
+    }
+    
 }
-
 //       function som ger canvasens koordinater
-
-
 function currentPosition(canvas,evn) {
     let rect = canvas.getBoundingClientRect();
     return {
@@ -287,30 +258,24 @@ function currentPosition(canvas,evn) {
             y: evn.clientY - rect.top
     }
 };
-
-	
+    
 //      reset function till alla rit events
-
 function reset(){
-		myPosistion = [];
-		clickCount = 0;
-		userCircle = false;
-		userRect = false;
-		userTri = false;
-	};
-
-
-
+        myPosistion = [];
+        clickCount = 0;
+        userCircle = false;
+        userRect = false;
+        userTri = false;
+    };
  
 //      !! Circle !!
-
 function Circle(centerX, centerY, radius) {
     this.centerX = centerX;
     this.centerY = centerY;
     this.radius = radius;
     this.draw = function() {
         context.beginPath();
-		changeColor();
+        changeColor();
         context.arc(this.centerX,this.centerY,this.radius,0,2*Math.PI);
         context.stroke();
         context.closePath();   
@@ -320,12 +285,8 @@ function Circle(centerX, centerY, radius) {
     
 };
  
-
    
-
-
 //      !! Triangle !!
-
 function Triangle(x1, y1, x2, y2, x3, y3) {
     this.x1 = x1;
     this.y1 = y1;
@@ -335,41 +296,37 @@ function Triangle(x1, y1, x2, y2, x3, y3) {
     this.y3 = y3;
     this.draw = function() {
     context.beginPath();
-	changeColor();
+    changeColor();
     context.moveTo(this.x1,this.y1);
     context.lineTo(this.x2,this.y2);
     context.lineTo(this.x3,this.y3);
-	context.lineTo(this.x1,this.y1);
+    context.lineTo(this.x1,this.y1);
     context.closePath();
-	context.stroke();
-
+    context.stroke();
      
 }
-
 };
-
     //  !! Rectangle !!
-	
-	
+    
+    
 function Rectangle(x1, y1, x2, y2) {
     this.x1 = x1;
     this.y1 = y1;
     this.x2 = x2;
     this.y2 = y1;
-	this.x3 = x2;
+    this.x3 = x2;
     this.y3 = y2;
     this.x4 = x1;
     this.y4 = y2;
     this.draw = function() {
     context.beginPath();
-	changeColor();
+    changeColor();
     context.moveTo(this.x1,this.y1);
     context.lineTo(this.x2,this.y2);
-	context.lineTo(this.x3,this.y3);
+    context.lineTo(this.x3,this.y3);
     context.lineTo(this.x4,this.y4);
     context.closePath();
-	context.stroke();
+    context.stroke();
     
 }
-
 };
