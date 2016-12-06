@@ -1,4 +1,8 @@
+/*  
+lab 3 rita med canvas 
 
+
+*/
 //    !! variablar !!
 let clear = document.getElementById('clearBtn'),
     circleBtn = document.getElementById('circleBtn'),
@@ -7,8 +11,8 @@ let clear = document.getElementById('clearBtn'),
     exportBtn = document.getElementById('expoBtn'),    
     deltBtn = document.getElementById('delete'),
     expoFig = document.getElementById('exportFig'),
-    selectColor = document.getElementById('selectColor')
-    submitColor = document.getElementById('submitColor')
+    selectColor = document.getElementById('selectColor'),
+    submitColor = document.getElementById('submitColor'),
     hexColor = document.getElementById('hex-color'),
     hexColors ='^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$',
     json = document.getElementById('JSON-div'),
@@ -16,14 +20,17 @@ let clear = document.getElementById('clearBtn'),
     userRect = false,
     userTri = false,    
     clickCount = 0,
+    type ='',
+    color = selectColor.options[selectColor.selectedIndex].value,
     statusBar = document.getElementById('statusBar'),
     statusBar1 = document.getElementById('statusBar1'),
     menu = document.getElementById('menuBtn'),
     canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d'),
     e = document.getElementById('dropdown'),
-    myPosistion = [];
-    let colorCheck;
+    myPosistion = [],
+    saveDrawingUser =[],
+    colorCheck;
     
     
     
@@ -62,8 +69,10 @@ clear.addEventListener('mouseenter', function() {
 clear.addEventListener('click', function(event) {
     reset();
     context.clearRect(0,0,750,450);
+	json.innerHTML ='';
+    saveDrawingUser = [];
     statusBar.innerHTML ='your work has been erased';
-    console.log("allt borta?")
+   
 });
 //        stoppar pågående figur
 deltBtn.addEventListener('mouseenter', function() {
@@ -72,7 +81,7 @@ deltBtn.addEventListener('mouseenter', function() {
 });
 deltBtn.addEventListener('click', function(event) {
     statusBar.innerHTML ='your work has been canceled';
-    myPosistion = [];
+    reset();
     userCircle = false;
     userTri = false;
     userRect = false;
@@ -84,26 +93,16 @@ exportBtn.addEventListener('mouseenter', function() {
     statusBar.innerHTML ='click here to send your work to JSON';
 });
 //           export to json 
+
+/* saveDrawingUser är en variabel som innehåller alla koordinater och type för figurer */
 exportBtn.addEventListener('click', function(event) {
-    console.log(myPosistion);
-                if(myPosistion.length >= 0 ) {
-                let jtext ='';
-                console.log("heheheh")
-                    
-                        let text = JSON.stringify(myPosistion);
-                        jtext = jtext + text;
-                        json.value = jtext;
-                        statusBar.innerHTML='your work has been exported!';
-                        json.innerHTML ="figure coordinates are :"+JSON.stringify(myPosistion);
-                        console.log("höhöhöh")
-                        console.log(JSON.stringify(myPosistion));
-                    
-                                
-                }
-        
-    if(myPosistion.length == 0 ) {
-    console.log('neeeee')
-    statusBar.innerHTML ='no content';
+	if(saveDrawingUser.length >= 1 ) {
+		statusBar.innerHTML='your work has been exported!';
+		json.innerHTML = JSON.stringify(saveDrawingUser);
+		console.log('JSON exporterad');             
+	}else{
+		json.innerHTML ='';
+		statusBar.innerHTML ='no content';
     };
     
 });
@@ -122,7 +121,7 @@ submitColor.addEventListener('click', function(event){
             statusBar.innerHTML ='not valid :';
         }
     }
-    
+   
         
     
 } )
@@ -150,6 +149,8 @@ hexColor.addEventListener('keyup', function(event){
 circleBtn.addEventListener('click', function(event){
    reset();
    userCircle = true;
+   type ='Circle';
+   myPosistion =[];
    statusBar.innerHTML = 'you chosed to draw a circle';
 });
 circleBtn.addEventListener('mouseenter', function() {
@@ -160,6 +161,8 @@ circleBtn.addEventListener('mouseenter', function() {
 triBtn.addEventListener('click', function(event) {
     reset();
     userTri = true;
+    type ='Triangle';
+    myPosistion =[];
     statusBar.innerHTML ='you chosed to draw a triangle';
     console.log("triangeln lever")
 });
@@ -175,10 +178,16 @@ rectangleBtn.addEventListener('mouseenter', function() {
 rectangleBtn.addEventListener('click', function(event){
    reset();
    userRect = true;
+   type ='Rectangle';
+   myPosistion =[];
    statusBar.innerHTML = 'you chosed to draw a rectangle';
   
 });
+
+
 // functioner för att rita på canvas 
+
+
 canvas.addEventListener('click', function (event) {
     let cord = [];
     let rect = canvas.getBoundingClientRect();
@@ -186,7 +195,7 @@ canvas.addEventListener('click', function (event) {
     cord.push(event.clientY - rect.top);
     console.log("My cords: "+cord);
     
-    
+   
    if(userCircle === true && clickCount===0){
     clickCount++;
     myPosistion.push(cord);
@@ -196,9 +205,11 @@ canvas.addEventListener('click', function (event) {
     let radius = Math.hypot(myPosistion[1][0] - myPosistion[0][0], myPosistion[1][1] - myPosistion[0][1]);
     let circleFig = new Circle(myPosistion[0][0], myPosistion[0][1], radius);
     circleFig.draw();
+    
     statusBar.innerHTML ='you created a Circle!';
     clickCount = 0;
     
+     
   }   else if(userRect == true && clickCount<=0) {
       clickCount++;
       myPosistion.push(cord);
@@ -211,8 +222,9 @@ canvas.addEventListener('click', function (event) {
     statusBar.innerHTML ='you created a rectangle';
     clickCount= 0;
     
-    
+   
   } 
+  
    else if(userTri == true && clickCount <= 1) {
       clickCount++;
       myPosistion.push(cord);
@@ -220,15 +232,17 @@ canvas.addEventListener('click', function (event) {
       myPosistion.push(cord);
   let triangleFig = new Triangle(myPosistion[0][0], myPosistion[0][1], myPosistion[1][0], myPosistion[1][1], myPosistion[2][0], myPosistion[2][1]);
       triangleFig.draw();
+      
       statusBar.innerHTML = 'you created a triangle';
       clickCount = 0;
-     
+    
   }
 });
 //     färger till canvas figurer
 function changeColor() {
     context.strokeStyle = selectColor.options[selectColor.selectedIndex].value;
 }
+
 function validColor(list) {
     let colorOk =['A','B','C','D','E','F','0','1','2','3','4','5','6','7','8','9'];
     let colorCount =0;
@@ -262,11 +276,24 @@ function currentPosition(canvas,evn) {
 //      reset function till alla rit events
 function reset(){
         myPosistion = [];
+        saveDrawingUser =[];
         clickCount = 0;
         userCircle = false;
         userRect = false;
         userTri = false;
     };
+
+
+function newDrawing(){
+  let xdraw = {
+    type: type,
+    color: selectColor.value,
+    coordinates: myPosistion
+  };
+  saveDrawingUser.push(xdraw);
+  console.log("newDrawing")
+ 
+}
  
 //      !! Circle !!
 function Circle(centerX, centerY, radius) {
@@ -279,11 +306,15 @@ function Circle(centerX, centerY, radius) {
         context.arc(this.centerX,this.centerY,this.radius,0,2*Math.PI);
         context.stroke();
         context.closePath();   
-        
+        newDrawing();
+        myPosistion = [];
+      console.log('cirkel function')
+      
     
 }
     
-};
+}
+
  
    
 //      !! Triangle !!
@@ -303,9 +334,12 @@ function Triangle(x1, y1, x2, y2, x3, y3) {
     context.lineTo(this.x1,this.y1);
     context.closePath();
     context.stroke();
+    newDrawing();
+    myPosistion = [];
+       
      
 }
-};
+}
     //  !! Rectangle !!
     
     
@@ -327,6 +361,8 @@ function Rectangle(x1, y1, x2, y2) {
     context.lineTo(this.x4,this.y4);
     context.closePath();
     context.stroke();
-    
+    newDrawing();
+    myPosistion = [];
+       
 }
 };
