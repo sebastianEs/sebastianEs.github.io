@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>sebbchatt</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="main.css">
+
+<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBUumT5smM_9q_xJKF-AN0b9CCZ5ZUPHEU",
+    authDomain: "sebbchatt.firebaseapp.com",
+    databaseURL: "https://sebbchatt.firebaseio.com",
+    storageBucket: "sebbchatt.appspot.com",
+    messagingSenderId: "425717934440"
+  };
+  firebase.initializeApp(config);
+</script>
+
+</head>
+<body>
+
+     <div id="inputdata">
+	    <p>Hello<p>
+		<input type="text" id="inputWords" placeholder="Write something...">
+	    <input type="text" id="describetext" placeholder="Why is it so...">
+		<button id="button">Save and post</button>
+	 </div>
+
+     <div id="mymessage">
+	    <h2>Messages</h2>
+		<div></div>
+	 </div>
+
+
+<script src="sebbchatt.js"></script>
+
+</body>
+</html>
