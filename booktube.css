@@ -1,0 +1,142 @@
+
+body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;}
+
+#container {
+	width: 100vw;
+	background-color: #ede6d3;
+	/*margin: 0px auto;*/
+}
+/*     HEADER SECTION      */
+
+
+#main-header {
+	height: 90px;
+	width: 100vw;
+	background-color: #ccc2a5;
+	border-radius: 5px;
+}
+
+/*      NAVBAR SECTION      */
+
+
+#navbar {
+	width: 100vw;
+	margin: 0px;
+}
+#navbar ul {
+	
+	/*margin-top: 10px;*/
+	padding: 15px;
+	list-style: none;
+	background-color: #3d3b37;
+	border-radius: 5px;
+	text-align: center;
+	
+}
+#navbar ul li {
+	display: inline;
+	cursor: pointer;
+}
+#navbar ul li span {
+	background-color: #3d3b37;
+	color: white;
+	padding: .2em 1em;
+}
+#navbar ul li span:hover {
+	color: #000;
+	background-color: white;
+}
+
+
+#returnKey {                /*   div som returnerar en api key */
+	font-size: 140%;
+	color: white;
+	visibility: hidden;
+	display: inline;
+}
+
+
+/*     MAIN SECTION         */
+
+
+.wrapper-image {
+	width: 100vw;
+	background-color: #ede6d3;
+	border-radius: 5px;
+	font-size: 110%;
+	height: 50vh;
+	margin-bottom: 0px;
+	background-image: url(relax.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	
+	border-radius: 50%;
+}
+
+
+.wrapper-main {
+	width: 80vw;
+	background-color: #ede6d3;
+	border-radius: 5px;
+	height: 100vh;
+	margin: auto;
+	
+	
+}
+
+.view-books {
+	margin: 10px 0px 10px 0px;
+	height: 60%;
+	display: block;
+	border-bottom: 2px solid black;
+	overflow-y: scroll;
+}
+
+
+#displayBooks {
+	height: 30px;
+	padding: 5px;
+	font-size: 130%;
+	
+} 
+
+#displayBooks li {
+	display: block;
+	border-bottom: 2px solid black;
+    font-size: 120%;
+    margin-top: 10px;	
+}
+
+/*      FOOTER SECTION      */
+
+
+#footer {
+	background-color: #ccc2a5;
+	height: 60px;
+	width: 100vw;
+}
+
+
+
+
+/*           */
+
+h1 {
+	font-size: 250%;
+	text-align: center;
+	color: #efece6;
+	font-family: "century gothic";
+	margin: 0px;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY´(-50%);
+}
+#span {
+	font-size: 140%;
+    margin-left: 15px;
+	
+}
+p {text-align: center;}
