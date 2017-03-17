@@ -54,7 +54,10 @@ body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;
 	visibility: hidden;
 	display: inline;
 }
-
+#varning {
+	
+	font-size: 140%;
+}
 
 /*     MAIN SECTION         */
 
@@ -87,9 +90,9 @@ body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;
 
 .view-books {
 	margin: 10px 0px 10px 0px;
-	height: 60%;
+	height: 40%;
 	display: block;
-	border-bottom: 2px solid black;
+	/*border-bottom: 2px solid black;*/
 	overflow-y: scroll;
 }
 
@@ -105,6 +108,8 @@ body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;
 	display: block;
 	border-bottom: 2px solid black;
     font-size: 120%;
+	font-family: verdana;
+	font-weight: 300;
     margin-top: 10px;	
 }
 
