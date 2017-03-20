@@ -4,37 +4,56 @@
 <meta charset="utf-8">
 <title>övning7</title>
 <style>
-#div {
- background-color: red;
- color: white;
+body {
+   display: block;
+   margin: 8px;
 }
 
-@media screen and (min-width: 800px) {
-  #div {
-   background-color:green;
-   flex: row;
+.a, .b, .c {
+
+   display: inline-block;
    border: 1px solid gray;
-  }
+   height: 150px;
+   padding: 5px;
+   background-color: red;
+   width: 100%;
 }
-@media screen and (min-height:300px; min-width:400px;){
- .a {
-    border: 1px solid black;
-	display:block;
-	
- }
+
+@media only screen and (max-width: 800px) {
+   .a {
+      
+   background-color: aqua;
+ 
+   }
+   .b {
+      
+   background-color: limeGreen;
+ 
+   }
+   .c {
+      
+   background-color: hotpink;
+ 
+   }
 }
+
 
 </style>
 </head>
 <body>
-<div id="div">
-   <div class="class">
-    <div class="a">A</div>
-    <div class="b">B</div>
-	<div class="c">C</div>
-	<div class="d">D</div>
-</div>
-</div>
+
+  
+    <div class="a">Resize the browser window. when the width of this page reaches 800px it will change background color.</div>
+     <div class="b">Resize the browser window. when the width of this page reaches 800px it will change background color.</div>
+	  <div class="c">Resize the browser window. when the width of this page reaches 800px it will change background color.</div>
+	
+
+
+   
+	
+	
+
+
 
 
 

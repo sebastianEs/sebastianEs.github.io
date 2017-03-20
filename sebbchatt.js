@@ -16,6 +16,6 @@ function addmessage(message) {
 		 firebase.database().ref('/words' + w).set({
 			 text: d
 		 });
-		 addmessage(`sebbchatt : ${w}={d}`);
+		 addmessage(`sebbchatt : + ${w}={d}`);
 	 });
 });
