@@ -258,12 +258,5 @@ i {
 
 @media screen and (max-width: 480px) {
 
-	header {
-		height: auto;
-	}
-	h1 {
-		font-size: 2em;
-	}
-	
-
+ 
 }

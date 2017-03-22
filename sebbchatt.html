@@ -4,7 +4,7 @@
 <title>sebbchatt</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" type="text/css" href="main.css">
 
 <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
 <script>
@@ -21,19 +21,26 @@
 
 </head>
 <body>
+    
+	<div id="container">
+	    <div id="logginSection">
+		<input type="text" id="inputWords" placeholder="Your Name..."/>
+	    <!--<button id="login-btn">Log in</button>-->
+		<button id="logout-btn">Log out</button>
+	
+	   </div>
+        <div id="inputdata">
+	        <h1>Let's chatt </h1>
+	        <input type="text" id="describetext" placeholder="Your message..."/>
+		    <button id="post-button">Post</button>
+	   </div>
 
-     <div id="inputdata">
-	    <p>Hello<p>
-		<input type="text" id="inputWords" placeholder="Write something...">
-	    <input type="text" id="describetext" placeholder="Why is it so...">
-		<button id="button">Save and post</button>
-	 </div>
+       <div id="mymessage">
+	       <h2>Messages :</h2>
+		   <div class="outputText"></div>
+	   </div>
 
-     <div id="mymessage">
-	    <h2>Messages</h2>
-		<div></div>
-	 </div>
-
+	</div>
 
 <script src="sebbchatt.js"></script>
 
