@@ -73,7 +73,7 @@ body {
 }
 .outputText {
 	border-bottom: 1px solid gray;
-	overflow-y: scroll;
+	
 }
 input {
 	display: inline;
@@ -88,4 +88,5 @@ h2 {
 h1 {
 	text-align: center;
 	color: white;
+	margin-top: 40px;
 }
