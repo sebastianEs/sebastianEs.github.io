@@ -12,19 +12,18 @@ window.addEventListener('load', function() {
      postBtn = document.getElementById('post-button');
 	 
 	 let h1 = document.getElementById('h');
-	
+	 
 	postBtn.addEventListener('click', function(event) {
 		 let name = uword.value;
 	     let msg = udescribe.value;
 		if( name != '' && msg != '' ) {
-		sendMessage();
-		snapFromdatabase();
-		pushTodatabase();
-		console.log("namn och input finns 1")
-	    
+			outputText.innerHTML='';
+		//sendMessage();	
+		console.log("namn och input finns 1" )
+	    h1.innerHTML="";
 		 } else {
 			 console.log("namn och input finns inte 1")
-			 // fixa clicket vid error!
+			 
 			  h1.innerHTML="You have to create username to chatt.";
 		 }
 	 });
@@ -32,16 +31,15 @@ window.addEventListener('load', function() {
 		  let name = uword.value;
 	      let msg = udescribe.value;
 		 if( event.keyCode == '13' && name != '' && msg != '' ) {
+			 outputText.innerHTML='';
 		  sendMessage();
-		  snapFromdatabase();
-		  pushTodatabase();
 		   console.log('namn och input finns 2' )
 		
 		 } else {
-			 	// fixa keypress vid error!
+			 	
 			 console.log('namn och input finns inte 2' )
-			 //alert('Did you forget to login ?')
-			 h1.innerHTML="You have to create username to chatt.";
+			 
+			 h1.innerHTML="Missing input";
 		 }
 	 });
 	
@@ -62,106 +60,92 @@ window.addEventListener('load', function() {
 		
 		
 		 let currentTime = h + ':' + m +':';
-		  console.log('klockan är :' + currentTime);
-		 firebase.database().ref('/messages ' + name).set({
+		 
+		  
+		 
+		 firebase.database().ref('users/').push({
 			 text: msg,
 			 time: currentTime,
-			 id: name
+			 name: name,
+			 id: ""
 		 });
-		 console.log('texten är :' + name +' ' + currentTime + ' ' + msg)
+		
 		  
-		 let outputText = document.getElementsByClassName('outputText')[0];
-		 let elem = document.createElement('div');
-		 elem.innerHTML = name +': '+ currentTime + msg;
+		 let outputText = document.getElementById('outputText');
+		 
+		
 		
 		
 		if( name == "" ) {
 			 console.log('search field is empty!')
-			 elem.innerHTML = "";	
-			 alert('You must be logged in to chatt!');
+
+			
 		 } else if( name == name && msg == "" ){
 			 console.log("name field is empty")
 			 
 			  
 		 } else {
-			 elem.innerHTML = name +': '+ currentTime + ' ' + msg;
+			 
 			 console.log('alla fält är ifyllda!');
 			 document.getElementById('describetext').value = '';
 		 }
 		 
 		 
-		 console.log('har if om log in körts?')
+		
 
 		 
 		 
-		if( outputText.childNodes.length == 0 ) {
-			outputText.appendChild(elem);
+		/*if( outputText.childNodes.length == 0 ) {
+			outputText.appendChild(li);
 			
 		 } else {
-			outputText.insertBefore( elem, outputText.childNodes[0] ); 			
-			elem.style.borderBottom = '1px solid gray';
-		 }
+			outputText.insertBefore( li, outputText.childNodes[0] ); 			
+			li.style.borderBottom = '1px solid gray';
+		 }*/
 		 
-		 
-		 
-		 
-	 }
-	    function pushTodatabase() {
-       	 let ct = new Date()
-		 let h = ct.getHours();
-		 let m = ct.getMinutes();
-	     let currentTime = h + ':' + m +':';
-	   let newPostref = firebase.database().ref('messages/').push({
-		  
-		   id: uword.value,
-		   time: currentTime,
-		   text: udescribe.value,
-		  
-	   });
-	    
-		let key = newPostref.key;
-	    console.log(newPostref);
-	   }
-	   
-	   function snapFromdatabase() {
-	 
-		 let db = firebase.database();
-		 db.ref('messages/').on('value', function(snapshot) {
+		  let db = firebase.database();
+		     db.ref('users/').on('value', function(snapshot) {
 			 let data =snapshot.val();
-			 let key =snapshot.key;
-		
-			 for( let prop in data ) {
-				 console.log("snapshot data " + data[prop]);
-			 }
+		    console.log(data);
+			
+			let textArr=[];
+			for(let ob in data) {
+				console.log(data[ob].text);
+				textArr.push(data[ob].time+': '+data[ob].name+': '+data[ob].text);
+				for( let i=textArr.length -1; i >= 0; i-- ) {
+					let li =document.createElement('li');
+					li.innerHTML=textArr[i]
+					outputText.appendChild(li);
+				}
+				
+				
+			}
+			
 		 })
 		 
+		 
 	 }
-	 
 	
 	 //    event som sparar användarens namn vid blur
 	 
 	 
-	 uword.addEventListener('blur', function(event) {
-		 
-		 
-		 console.log('show me on blur!')
+	 uword.addEventListener('blur', function(event) {		
 		 let saveName = uword.value;
-		 console.log('namnet sparades! ' + saveName)
 		 localStorage.setItem('key',saveName);
 		 let val = localStorage.getItem('key');
-		 console.log('sparas i localStorage? ' + val)
 		 h1.innerHTML="Let's chatt";
+		 
 	 });
 	 
 	 //     event som tar bort aktuell användare
 	 logOutBtn.addEventListener('click', function(e) {
 		 if( uword.value != "" ) {
 		localStorage.removeItem('key');
-        console.log('namnet är borta ? ')
         uword.innerHTML ="";
 		h1.innerHTML="Username is logged out";
        	} else {
-			console.log("name still valid");
+			h1.innerHTML="user is logged in";
+			uword.innerHTML="";
 		}
 	 });
 	 
