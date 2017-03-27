@@ -191,13 +191,10 @@ i {
   
 	
 }
-#footer i {
+#footer p {
 	text-align: center;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
     display: block;
-	
+	color: white;
 }
 
 

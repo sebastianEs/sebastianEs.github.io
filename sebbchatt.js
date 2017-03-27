@@ -2,7 +2,7 @@
 window.addEventListener('load', function() {
     
 
-    // let msg = document.getElementById('mymessage');
+   
 
     let logInBtn = document.getElementById('login-btn');
 	let logOutBtn = document.getElementById('logout-btn');
@@ -11,6 +11,7 @@ window.addEventListener('load', function() {
      udescribe = document.getElementById('describetext'),
      postBtn = document.getElementById('post-button');
 	 
+	 let h1 = document.getElementById('h');
 	
 	postBtn.addEventListener('click', function(event) {
 		 let name = uword.value;
@@ -20,10 +21,11 @@ window.addEventListener('load', function() {
 		snapFromdatabase();
 		pushTodatabase();
 		console.log("namn och input finns 1")
-	
+	    
 		 } else {
 			 console.log("namn och input finns inte 1")
 			 // fixa clicket vid error!
+			  h1.innerHTML="You have to create username to chatt.";
 		 }
 	 });
 	 udescribe.addEventListener('keypress', function(event) {
@@ -34,9 +36,12 @@ window.addEventListener('load', function() {
 		  snapFromdatabase();
 		  pushTodatabase();
 		   console.log('namn och input finns 2' )
+		
 		 } else {
 			 	// fixa keypress vid error!
 			 console.log('namn och input finns inte 2' )
+			 //alert('Did you forget to login ?')
+			 h1.innerHTML="You have to create username to chatt.";
 		 }
 	 });
 	
@@ -69,7 +74,26 @@ window.addEventListener('load', function() {
 		 let elem = document.createElement('div');
 		 elem.innerHTML = name +': '+ currentTime + msg;
 		
+		
+		if( name == "" ) {
+			 console.log('search field is empty!')
+			 elem.innerHTML = "";	
+			 alert('You must be logged in to chatt!');
+		 } else if( name == name && msg == "" ){
+			 console.log("name field is empty")
+			 
+			  
+		 } else {
+			 elem.innerHTML = name +': '+ currentTime + ' ' + msg;
+			 console.log('alla fält är ifyllda!');
+			 document.getElementById('describetext').value = '';
+		 }
+		 
+		 
+		 console.log('har if om log in körts?')
 
+		 
+		 
 		if( outputText.childNodes.length == 0 ) {
 			outputText.appendChild(elem);
 			
@@ -79,19 +103,7 @@ window.addEventListener('load', function() {
 		 }
 		 
 		 
-		 if( name == "" ) {
-			 console.log('field is empty!')
-			 elem.innerHTML = "";	
-			 alert('You must be logged in to chatt!');
-		 } else if( name == name && msg == "" ){
-			 console.log("uword is empty")
-			 
-			  
-		 } else {
-			 elem.innerHTML = name +': '+ currentTime + ' ' + msg;
-			 console.log('alla fält är ifyllda!');
-			 document.getElementById('describetext').value = '';
-		 }
+		 
 		 
 	 }
 	    function pushTodatabase() {
@@ -117,7 +129,7 @@ window.addEventListener('load', function() {
 		 db.ref('messages/').on('value', function(snapshot) {
 			 let data =snapshot.val();
 			 let key =snapshot.key;
-			 console.log('inside saveDatabase function')
+		
 			 for( let prop in data ) {
 				 console.log("snapshot data " + data[prop]);
 			 }
@@ -126,21 +138,31 @@ window.addEventListener('load', function() {
 	 }
 	 
 	
+	 //    event som sparar användarens namn vid blur
+	 
 	 
 	 uword.addEventListener('blur', function(event) {
+		 
+		 
 		 console.log('show me on blur!')
 		 let saveName = uword.value;
 		 console.log('namnet sparades! ' + saveName)
 		 localStorage.setItem('key',saveName);
 		 let val = localStorage.getItem('key');
 		 console.log('sparas i localStorage? ' + val)
+		 h1.innerHTML="Let's chatt";
 	 });
 	 
+	 //     event som tar bort aktuell användare
 	 logOutBtn.addEventListener('click', function(e) {
+		 if( uword.value != "" ) {
 		localStorage.removeItem('key');
         console.log('namnet är borta ? ')
-        uword.innerText ="";
-       		
+        uword.innerHTML ="";
+		h1.innerHTML="Username is logged out";
+       	} else {
+			console.log("name still valid");
+		}
 	 });
 	 
 	 
