@@ -1,0 +1,38 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+#container {
+	width: 50vw;
+	margin: auto;
+	border: 1px solid black;
+	position: relative;
+	top: 300px;
+}
+h1 {
+	text-align: center;
+}
+button {
+	height: 60px;
+	width: 300px;
+	left: 35%;
+	position: relative;
+	background-color: green;
+	font-size: 120%;
+}
+#hide-container {
+	border: 1px solid black;
+	width: 50%;
+	margin: auto;
+	height: 500px;
+	display: none;
+	
+}
+/*#showImg {
+	background-image: url('profilbild.jpg');
+	background-size: cover;
+	height: 200px;
+	width: 200px;
+}*/
+
