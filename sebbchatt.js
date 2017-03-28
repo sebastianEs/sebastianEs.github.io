@@ -19,11 +19,8 @@ window.addEventListener('load', function() {
 		if( name != '' && msg != '' ) {
 			outputText.innerHTML='';
 	       sendMessage();	
-		console.log("namn och input finns 1" )
 	    h1.innerHTML="";
 		 } else {
-			 console.log("namn och input finns inte 1")
-			 
 			  h1.innerHTML="You have to create username to chatt.";
 		 }
 	 });
@@ -32,12 +29,8 @@ window.addEventListener('load', function() {
 	      let msg = udescribe.value;
 		 if( event.keyCode == '13' && name != '' && msg != '' ) {
 			 outputText.innerHTML='';
-		  sendMessage();
-		   console.log('namn och input finns 2' )
-		
+		  sendMessage(); 
 		 } else {
-			 	
-			 console.log('namn och input finns inte 2' )
 			 
 			 h1.innerHTML="Missing input";
 		 }
@@ -59,7 +52,7 @@ window.addEventListener('load', function() {
 		//  skriver ut tiden  
 		
 		
-		 let currentTime = h + ':' + m +':';
+		 let currentTime = h + ':' + m +': ';
 		 
 		  
 		 
@@ -67,7 +60,6 @@ window.addEventListener('load', function() {
 			 text: msg,
 			 time: currentTime,
 			 name: name,
-			 id: ""
 		 });
 		 
 		
@@ -89,33 +81,18 @@ window.addEventListener('load', function() {
 			 
 			 console.log('alla fält är ifyllda!');
 			 document.getElementById('describetext').value = '';
-		 }
-		 
-		 
-		
-
-		 
-		 
-		/*if( outputText.childNodes.length == 0 ) {
-			outputText.appendChild(li);
-			
-		 } else {
-			outputText.insertBefore( li, outputText.childNodes[0] ); 			
-			li.style.borderBottom = '1px solid gray';
-		 }*/
-		 
-		  
+		 }   
 		 
 		 
 	 }
-	let db = firebase.database();
+	       let db = firebase.database();
 		     db.ref('users/').on('value', function(snapshot) {
 			 let data =snapshot.val();
-		    console.log(data);
+		     
 			
 			let textArr=[];
 			for(let ob in data) {
-				console.log(data[ob].text);
+				
 				textArr.push(data[ob].time+data[ob].name+': '+data[ob].text);
 				
 				}
