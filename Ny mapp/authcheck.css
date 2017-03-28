@@ -16,7 +16,8 @@ h1 {
 button {
 	height: 60px;
 	width: 300px;
-	left: 35%;
+	margin-left: 35%;
+	margin-top: 5%;
 	position: relative;
 	background-color: green;
 	font-size: 120%;
