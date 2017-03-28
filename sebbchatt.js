@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
 	     let msg = udescribe.value;
 		if( name != '' && msg != '' ) {
 			outputText.innerHTML='';
-		//sendMessage();	
+	       sendMessage();	
 		console.log("namn och input finns 1" )
 	    h1.innerHTML="";
 		 } else {
@@ -69,6 +69,7 @@ window.addEventListener('load', function() {
 			 name: name,
 			 id: ""
 		 });
+		 
 		
 		  
 		 let outputText = document.getElementById('outputText');
@@ -103,7 +104,11 @@ window.addEventListener('load', function() {
 			li.style.borderBottom = '1px solid gray';
 		 }*/
 		 
-		  let db = firebase.database();
+		  
+		 
+		 
+	 }
+	let db = firebase.database();
 		     db.ref('users/').on('value', function(snapshot) {
 			 let data =snapshot.val();
 		    console.log(data);
@@ -111,21 +116,19 @@ window.addEventListener('load', function() {
 			let textArr=[];
 			for(let ob in data) {
 				console.log(data[ob].text);
-				textArr.push(data[ob].time+': '+data[ob].name+': '+data[ob].text);
+				textArr.push(data[ob].time+data[ob].name+': '+data[ob].text);
+				
+				}
 				for( let i=textArr.length -1; i >= 0; i-- ) {
 					let li =document.createElement('li');
-					li.innerHTML=textArr[i]
+					li.innerHTML=textArr[i];
 					outputText.appendChild(li);
-				}
+					li.style.borderBottom="1px solid gray";
 				
 				
 			}
 			
-		 })
-		 
-		 
-	 }
-	
+		 });
 	 //    event som sparar användarens namn vid blur
 	 
 	 
