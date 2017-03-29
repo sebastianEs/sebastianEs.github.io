@@ -26,7 +26,7 @@
       let showUser = document.getElementById('showUser');
 	 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-    console.log("user is logged in" + user)
+    console.log("user is logged in" + user.displayName)
    } else {
     console.log("user is not logged in" + user)
    }
