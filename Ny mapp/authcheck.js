@@ -14,9 +14,11 @@
 	firebase.auth().signOut()
     .then(function(result) {
 	// Utloggning lyckades
+	console.log("signed out!")
   })
    .catch(function(error) {
 	// Utloggning misslyckades
+	console.log("something went wrong!")
   });
   }
   
@@ -36,6 +38,7 @@
 	cont.style.display="none";
 	btnCont.style.visibility="visible";
 	logOutUser();
+	console.log(logOutUser());
   })
   
 
