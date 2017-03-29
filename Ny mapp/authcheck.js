@@ -31,6 +31,13 @@
     console.log("user is not logged in" + user)
    }
 });
+   let user = firebase.auth().currentUser;
+
+   if (user) {
+     showImg=user.displayName;
+   } else {
+    console.log("user is not signed in")
+   }
   }
   
   
