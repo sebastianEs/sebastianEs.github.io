@@ -21,12 +21,12 @@
 	console.log("something went wrong!")
   });
   }
-  function show() {
+  /*function show() {
 	  let showImg = document.getElementById('showImg');
       let showUser = document.getElementById('showUser');
 	 firebase.auth().onAuthStateChanged(function(user) {
     if (user != null) {
-		console.log(firebase.auth().currentUser.providerData[0].displayName);
+		
     console.log("user is logged in" + user)
 	
 	showUser=user.Email;
@@ -34,7 +34,7 @@
    } else {
     console.log("user is not logged in" + user)
    }
-});
+});*/
  
   }
   
@@ -48,8 +48,8 @@
      cont.style.display="block";
      btnCont.style.visibility="hidden";
 	 logInUser();
-	 show();
-	 
+	 //show();
+	 console.log(firebase.auth().currentUser.providerData[0].displayName);
   });
   logOutBtn.addEventListener('click', function(event) {
 	cont.style.display="none";
