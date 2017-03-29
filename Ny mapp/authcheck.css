@@ -32,10 +32,10 @@ button {
 	
 }
 #showImg {
-	/*background-image: url('profilbild.jpg');*/
+	display: block;
 	background-size: cover;
 	height: 200px;
-	width: 200px;
+	width: 50%;
 	margin: auto;
 }
 #showUser {

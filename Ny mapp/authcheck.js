@@ -22,22 +22,7 @@
 	console.log("something went wrong!")
   });
   }
-  /*function show() {
-	  let showImg = document.getElementById('showImg');
-      let showUser = document.getElementById('showUser');
-	 firebase.auth().onAuthStateChanged(function(user) {
-    if (user != null) {
-		
-    console.log("user is logged in" + user)
-	
-	showUser=user.Email;
-	showImg=user.photoURL;
-   } else {
-    console.log("user is not logged in" + user)
-   }
-});
- 
-  }*/
+  
    let showUser = document.getElementById('showUser');
    let showImg = document.getElementById('showImg');
   
