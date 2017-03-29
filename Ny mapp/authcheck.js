@@ -24,6 +24,8 @@
   function show() {
 	  let showImg = document.getElementById('showImg');
       let showUser = document.getElementById('showUser');
+	  let user = firebase.auth().currentUser;
+
 	  if( user != null ) {
 		  showUser =user.displayName;
 		  showImg=user.photoURL;
