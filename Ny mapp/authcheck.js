@@ -26,8 +26,9 @@
       let showUser = document.getElementById('showUser');
 	 firebase.auth().onAuthStateChanged(function(user) {
     if (user != null) {
+		console.log(firebase.auth().currentUser.providerData[0].displayName);
     console.log("user is logged in" + user)
-	console.log(firebase.auth().currentUser.providerData[0].displayName);
+	
 	showUser=user.Email;
 	showImg=user.photoURL;
    } else {
