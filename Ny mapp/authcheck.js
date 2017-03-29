@@ -47,7 +47,7 @@
      btnCont.style.visibility="hidden";
 	 logInUser();
 	 show();
-	 
+	 console.log(firebase.auth().currentUser.providerData[0].displayName);
   });
   logOutBtn.addEventListener('click', function(event) {
 	cont.style.display="none";
