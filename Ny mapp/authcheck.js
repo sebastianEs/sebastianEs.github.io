@@ -35,12 +35,13 @@
 
    if (user != null) {
      showUser=user.displayName;
+	 showImg=user.photoURL;
 	 console.log("user is :" + showUser);
    } else {
     console.log("user is not signed in")
    }
   }
-  
+  console.log(show());
   
   let authBtn = document.getElementById('auth-btn');
   let logOutBtn = document.getElementById('logOut');
@@ -52,6 +53,7 @@
      btnCont.style.visibility="hidden";
 	 logInUser();
 	 show();
+	 
   });
   logOutBtn.addEventListener('click', function(event) {
 	cont.style.display="none";
