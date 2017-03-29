@@ -21,10 +21,19 @@
 	console.log("something went wrong!")
   });
   }
+  function show() {
+	  let showImg = document.getElementById('showImg');
+      let showUser = document.getElementById('showUser');
+	  if( user != null ) {
+		  showUser =user.displayName;
+		  showImg=user.photoURL;
+	  } else {
+		  console.log("no image or name");
+	  }
+  }
+  
   
   let authBtn = document.getElementById('auth-btn');
-  let showImg = document.getElementById('showImg');
-  let showUser = document.getElementById('showUser');
   let logOutBtn = document.getElementById('logOut');
   let cont = document.getElementById('hide-container');
   let btnCont =document.getElementById('container');
@@ -33,12 +42,13 @@
      cont.style.display="block";
      btnCont.style.visibility="hidden";
 	 logInUser();
+	 show();
   });
   logOutBtn.addEventListener('click', function(event) {
 	cont.style.display="none";
 	btnCont.style.visibility="visible";
 	logOutUser();
-	console.log(logOutUser());
+
   })
   
 
