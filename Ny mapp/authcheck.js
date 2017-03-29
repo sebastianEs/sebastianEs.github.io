@@ -34,9 +34,9 @@
    } else {
     console.log("user is not logged in" + user)
    }
-});*/
+});
  
-  }
+  }*/
   
   
   let authBtn = document.getElementById('auth-btn');
