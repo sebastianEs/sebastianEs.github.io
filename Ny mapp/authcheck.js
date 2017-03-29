@@ -6,7 +6,7 @@
   .then(function(result) {
 	
 	let user = result.user;
-    console.log(result.user);
+  
 	});
 	}
 	/*!!!!!!!!!!!!!logout!!!!!!*/
@@ -34,9 +34,7 @@
   authBtn.addEventListener('click', function(event) {
      cont.style.display="block";
      btnCont.style.visibility="hidden";
-	 logInUser();
-	 //show();
-	 console.log("de va la gött"+firebase.auth().currentUser.providerData[0].email);
+	 logInUser();	 
 	 if( firebase.auth().currentUser.providerData[0].displayName === null ) {
 		 showUser.innerHTML=firebase.auth().currentUser.providerData[0].email;
 	 } else {
