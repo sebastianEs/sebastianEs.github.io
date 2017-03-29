@@ -36,5 +36,11 @@ button {
 	background-size: cover;
 	height: 200px;
 	width: 200px;
+	margin: auto;
 }
+#showUser {
+	font-size: 140%;
+	text-align: center;
+}
+
 

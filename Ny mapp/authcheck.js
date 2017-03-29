@@ -13,7 +13,8 @@
 	function logOutUser() {
 	firebase.auth().signOut()
     .then(function(result) {
-	// Utloggning lyckades
+	showUser.innerHTML="";
+	showImg.src="";
 	console.log("signed out!")
   })
    .catch(function(error) {
