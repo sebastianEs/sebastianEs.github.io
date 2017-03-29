@@ -27,19 +27,14 @@
 	 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
     console.log("user is logged in" + user)
+	showUser=user.displayName;
+	showImg=user.photoURL;
    } else {
     console.log("user is not logged in" + user)
    }
 });
-   let user = firebase.auth().currentUser;
-
-   if (user != null) {
-     showUser=user.displayName;
-	 showImg=user.photoURL;
-	 console.log("user is :" + showUser);
-   } else {
-    console.log("user is not signed in")
-   }
+ 
+  
   }
   console.log(show());
   
