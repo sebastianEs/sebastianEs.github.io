@@ -37,7 +37,8 @@
 });
  
   }*/
-  
+   let showUser = document.getElementById('showUser');
+   let showImg = document.getElementById('showImg');
   
   let authBtn = document.getElementById('auth-btn');
   let logOutBtn = document.getElementById('logOut');
@@ -49,7 +50,12 @@
      btnCont.style.visibility="hidden";
 	 logInUser();
 	 //show();
-	 console.log("de va la gött"+firebase.auth().currentUser.providerData[0].displayName);
+	 console.log("de va la gött"+firebase.auth().currentUser.providerData[0].email);
+	 if( firebase.auth().currentUser.providerData[0].displayName === null ) {
+		 showUser.innerHTML=firebase.auth().currentUser.providerData[0].email;
+	 } else {
+		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
+	 }
   });
   logOutBtn.addEventListener('click', function(event) {
 	cont.style.display="none";
