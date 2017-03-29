@@ -17,7 +17,7 @@ button {
 	height: 60px;
 	width: 300px;
 	margin-left: 35%;
-	margin-top: 5%;
+	margin-top: 2%;
 	position: relative;
 	background-color: green;
 	font-size: 120%;
@@ -27,7 +27,7 @@ button {
 	border: 1px solid black;
 	width: 50%;
 	margin: auto;
-	height: 500px;
+	height: 600px;
 	display: none;
 	
 }
