@@ -25,7 +25,7 @@
 	  let showImg = document.getElementById('showImg');
       let showUser = document.getElementById('showUser');
 	 firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
+    if (user != null) {
     console.log("user is logged in" + user)
 	showUser=user.Email;
 	showImg=user.photoURL;
@@ -36,7 +36,7 @@
  
   
   }
-  console.log(show());
+  
   
   let authBtn = document.getElementById('auth-btn');
   let logOutBtn = document.getElementById('logOut');
