@@ -24,14 +24,13 @@
   function show() {
 	  let showImg = document.getElementById('showImg');
       let showUser = document.getElementById('showUser');
-	  let user = firebase.auth().currentUser;
-
-	  if( user != null ) {
-		  showUser =user.displayName;
-		  showImg=user.photoURL;
-	  } else {
-		  console.log("no image or name");
-	  }
+	 firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+    console.log("user is logged in" + user)
+   } else {
+    console.log("user is not logged in" + user)
+   }
+});
   }
   
   
@@ -50,7 +49,7 @@
 	cont.style.display="none";
 	btnCont.style.visibility="visible";
 	logOutUser();
-
+    
   })
   
 

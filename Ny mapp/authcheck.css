@@ -21,6 +21,7 @@ button {
 	position: relative;
 	background-color: green;
 	font-size: 120%;
+	cursor: pointer;
 }
 #hide-container {
 	border: 1px solid black;
@@ -30,10 +31,10 @@ button {
 	display: none;
 	
 }
-/*#showImg {
-	background-image: url('profilbild.jpg');
+#showImg {
+	/*background-image: url('profilbild.jpg');*/
 	background-size: cover;
 	height: 200px;
 	width: 200px;
-}*/
+}
 
