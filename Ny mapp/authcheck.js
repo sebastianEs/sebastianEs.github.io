@@ -56,6 +56,7 @@
 	 } else {
 		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
 	 }
+	 showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
   });
   logOutBtn.addEventListener('click', function(event) {
 	cont.style.display="none";
