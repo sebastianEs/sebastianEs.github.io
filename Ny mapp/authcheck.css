@@ -32,6 +32,9 @@ button {
 	display: none;
 	
 }
+#secretBtn, #logOut {
+	display: inline;
+}
 #showImg {
 	display: block;
 	background-size: cover;
