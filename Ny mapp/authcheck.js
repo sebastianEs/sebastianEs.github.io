@@ -27,6 +27,7 @@
 	 firebase.auth().onAuthStateChanged(function(user) {
     if (user != null) {
     console.log("user is logged in" + user)
+	console.log(firebase.auth().currentUser.providerData[0].displayName);
 	showUser=user.Email;
 	showImg=user.photoURL;
    } else {
@@ -47,7 +48,7 @@
      btnCont.style.visibility="hidden";
 	 logInUser();
 	 show();
-	 console.log(firebase.auth().currentUser.providerData[0].displayName);
+	 
   });
   logOutBtn.addEventListener('click', function(event) {
 	cont.style.display="none";
