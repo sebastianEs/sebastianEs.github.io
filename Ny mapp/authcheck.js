@@ -4,7 +4,14 @@
 
   firebase.auth().signInWithPopup(provider)
   .then(function(result) {
-	
+	if( firebase.auth().currentUser.providerData[0].displayName === null ) {
+		 showUser.innerHTML=firebase.auth().currentUser.providerData[0].email;
+		 secBtn.disabled=false;
+		 console.log('secret är tillgänglig')
+	 } else {
+		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
+		  secBtn.disabled=false;
+	 }
 	let user = result.user;
 	console.log(user)
 	});
@@ -36,14 +43,7 @@
   authBtn.addEventListener('click', function(event) {
  
 	 logInUser();	 
-	 if( firebase.auth().currentUser.providerData[0].displayName === null ) {
-		 showUser.innerHTML=firebase.auth().currentUser.providerData[0].email;
-		 secBtn.disabled=false;
-		 console.log('secret är tillgänglig')
-	 } else {
-		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
-		  secBtn.disabled=false;
-	 }
+	 
 	 cont.style.display="block";
      btnCont.style.visibility="hidden";
 	 showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
