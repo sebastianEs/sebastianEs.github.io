@@ -53,12 +53,14 @@
   });
   secBtn.addEventListener('click', function(event) {
 	  console.log("secret klick")
-	 if( firebase.auth().currentUser.providerData[0].displayName !== null ) {
+	 if( firebase.auth().currentUser.providerData[0].email !== null ) {
 		 secImg.style.visibility="visible";
 		 secImg.src="img/saywhatagain.jpg";
 		 console.log("bilden visas!")
-	 }
+	 } else {
 		 secImg.style.visibility="hidden";
+		 console.log("bilden är borta!")
+	 }
 	 
 	 
   });
