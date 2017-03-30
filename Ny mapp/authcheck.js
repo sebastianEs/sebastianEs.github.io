@@ -32,6 +32,7 @@
   let cont = document.getElementById('hide-container');
   let btnCont =document.getElementById('container');
   secBtn.disabled=true;
+  console.log('secret är inte redo')
   /*!!!!!!!!!!!!!!knapp events!!!!!!!!!!!!!!!!!*/
   authBtn.addEventListener('click', function(event) {
      cont.style.display="block";
