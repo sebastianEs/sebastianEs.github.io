@@ -32,7 +32,6 @@
   let cont = document.getElementById('hide-container');
   let btnCont =document.getElementById('container');
   secBtn.disabled=true;
-  console.log('secret är inte redo')
   secImg.style.visibility="hidden";
   /*!!!!!!!!!!!!!!knapp events!!!!!!!!!!!!!!!!!*/
   authBtn.addEventListener('click', function(event) {
@@ -65,9 +64,9 @@
 	 
   });
   logOutBtn.addEventListener('click', function(event) {
+	  logOutUser();
 	cont.style.display="none";
 	btnCont.style.visibility="visible";
-	logOutUser();
     secBtn.disabled=true;
   })
   
