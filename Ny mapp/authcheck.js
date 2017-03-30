@@ -15,8 +15,9 @@
 	  
 	let user = result.user;
 	console.log(user)
-	});
 	showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
+	});
+	
 	}
 	/*!!!!!!!!!!!!!logout!!!!!!*/
 	function logOutUser() {
