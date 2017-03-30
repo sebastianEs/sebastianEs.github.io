@@ -12,6 +12,7 @@
 		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
 		  secBtn.disabled=false;
 	 }
+	  showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
 	let user = result.user;
 	console.log(user)
 	});
@@ -41,12 +42,9 @@
   
   /*!!!!!!!!!!!!!!knapp events!!!!!!!!!!!!!!!!!*/
   authBtn.addEventListener('click', function(event) {
- 
-	 logInUser();	 
-	 
+	 logInUser();	  
 	 cont.style.display="block";
      btnCont.style.visibility="hidden";
-	 showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
   });
   secBtn.addEventListener('click', function(event) {
 	  console.log("secret klick")
