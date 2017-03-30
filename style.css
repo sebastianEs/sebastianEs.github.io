@@ -105,12 +105,11 @@ i {
 }
 #mainwrapper {
 	height: 100%;
-	
 	margin: 0px;
 	padding: 0px;
 }
 #content {
-	width: 590px;
+	width: 40vw;
 	float: left;
 	padding: 5px 15px;
 }
@@ -121,6 +120,7 @@ i {
 #content ul li {
 	padding: 5px;
 	margin: 5px;
+	text-align: center;
 }
 #content ul li a{
 	text-decoration: none;
@@ -130,8 +130,11 @@ i {
 #content ul li a:hover {
 	color: #db0808;
 }
+#content p {
+	text-align: center;
+}
 #middle {
-	width: 594px; 
+	width: 40vw; 
 	float: left;
 	padding: 5px 15px;
 	margin: 0px 5px 5px 5px;
@@ -143,6 +146,7 @@ i {
 #middle ul li {
 	padding: 5px;
 	margin: 5px;
+	text-align: center;
 }
 #middle ul li a {
 	text-decoration: none;
@@ -151,33 +155,34 @@ i {
 }
 #middle ul li a:hover {
 	color: #db0808;
+	
+}
+#middle p {
+	text-align: center;
 }
 .infocap {
 	border: 1px solid lightgray;
 	border-radius: 10px;
 }
-#about {
-	clear: both;
-	padding: 0 15px;
-	
-}
-
-
-
 
 #about {
 	height: 30%;
 	width: 100%;
 	display: inline-block;
 	clear: both;
+	padding: 5px 15px 0px 15px;
+	
+}
+#about p {
+	padding-top: 20px;
 }
 .myimg {
 	
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;
-	width: 200px;
-	height: 200px;
+	width: 250px;
+	height: 250px;
 	border-radius: 50%;
 	float: right;
 	margin: 0 0 10px 10px;
