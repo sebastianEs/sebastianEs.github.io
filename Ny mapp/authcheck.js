@@ -33,7 +33,7 @@
   let btnCont =document.getElementById('container');
   secBtn.disabled=true;
   secImg.style.visibility="hidden";
-  showImg="";
+  
   /*!!!!!!!!!!!!!!knapp events!!!!!!!!!!!!!!!!!*/
   authBtn.addEventListener('click', function(event) {
  
