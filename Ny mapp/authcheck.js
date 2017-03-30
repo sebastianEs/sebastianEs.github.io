@@ -36,8 +36,7 @@
   secImg.style.visibility="hidden";
   /*!!!!!!!!!!!!!!knapp events!!!!!!!!!!!!!!!!!*/
   authBtn.addEventListener('click', function(event) {
-     cont.style.display="block";
-     btnCont.style.visibility="hidden";
+ 
 	 logInUser();	 
 	 if( firebase.auth().currentUser.providerData[0].displayName === null ) {
 		 showUser.innerHTML=firebase.auth().currentUser.providerData[0].email;
@@ -46,10 +45,10 @@
 	 } else {
 		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
 		  secBtn.disabled=false;
-		 
 	 }
 	 showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
-	 
+	 cont.style.display="block";
+     btnCont.style.visibility="hidden";
   });
   secBtn.addEventListener('click', function(event) {
 	  console.log("secret klick")
