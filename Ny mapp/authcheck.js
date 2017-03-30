@@ -42,7 +42,8 @@
 	firebase.auth().signOut()
     .then(function(result) {
 	console.log("signed out!")
-	
+	secBtn.disabled=true;
+	secImg.src="";
   })
    .catch(function(error) {
 	// Utloggning misslyckades
@@ -88,10 +89,9 @@
   })
   logOutBtn.addEventListener('click', function(event) {
 	  logOutUser();
-	
 	cont.style.display="none";
 	btnCont.style.visibility="visible";
-    secBtn.disabled=true;
+    
   })
   
 
