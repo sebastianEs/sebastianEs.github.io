@@ -1,7 +1,7 @@
 /*!!!!!!!!!login!!!!!!!!!!!!!!!!!!!!!!*/
  function logInUser() {
   let provider = new firebase.auth.GithubAuthProvider();
-
+  
   firebase.auth().signInWithPopup(provider)
   .then(function(result) {
 	if( firebase.auth().currentUser.providerData[0].displayName === null ) {
@@ -18,6 +18,24 @@
 	showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
 	});
 	
+	}
+	function logInGoogle() {
+		let providerG = new firebase.auth.GoogleAuthProvider();
+		firebase.auth().signInWithPopup(providerG)
+  .then(function(result) {
+	if( firebase.auth().currentUser.providerData[0].displayName === null ) {
+		 showUser.innerHTML=firebase.auth().currentUser.providerData[0].email;
+		 secBtn.disabled=false;
+		 console.log('secret är tillgänglig')
+	 } else {
+		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
+		  secBtn.disabled=false;
+	 }
+	  
+	let user = result.user;
+	console.log(user)
+	showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
+	});
 	}
 	/*!!!!!!!!!!!!!logout!!!!!!*/
 	function logOutUser() {
@@ -40,6 +58,7 @@
   let logOutBtn = document.getElementById('logOut');
   let cont = document.getElementById('hide-container');
   let btnCont =document.getElementById('container');
+  let gooBtn = document.getElementById('goo-btn');
   secBtn.disabled=true;
   secImg.style.visibility="hidden";
   
@@ -63,6 +82,11 @@
 	 
 	 
   });
+  gooBtn.addEventListener('click', function(event) {
+	  logInGoogle();
+	  cont.style.display="block";
+      btnCont.style.visibility="hidden";
+  })
   logOutBtn.addEventListener('click', function(event) {
 	  logOutUser();
 	 // showUser.innerHTML="";
