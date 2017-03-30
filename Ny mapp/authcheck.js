@@ -53,7 +53,7 @@
 	cont.style.display="none";
 	btnCont.style.visibility="visible";
 	logOutUser();
-    
+    secBtn.disabled=true;
   })
   
 

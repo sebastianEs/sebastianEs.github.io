@@ -28,12 +28,12 @@ button {
 	border: 1px solid black;
 	width: 50%;
 	margin: auto;
-	height: 600px;
+	height: 100vh;
 	display: none;
 	background-color: white;
 }
 
-#showImg {
+#showImg, #secretImg {
 	display: block;
 	background-size: cover;
 	height: 300px;
