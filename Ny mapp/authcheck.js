@@ -12,16 +12,18 @@
 		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
 		  secBtn.disabled=false;
 	 }
-	  showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
+	  
 	let user = result.user;
 	console.log(user)
 	});
+	showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
 	}
 	/*!!!!!!!!!!!!!logout!!!!!!*/
 	function logOutUser() {
 	firebase.auth().signOut()
     .then(function(result) {
 	console.log("signed out!")
+	
   })
    .catch(function(error) {
 	// Utloggning misslyckades
@@ -55,7 +57,7 @@
 	 } else {
 		 secImg.style.visibility="hidden";
 		 console.log("bilden är borta!")
-		 secImg.src="";
+		 //secImg.src="";
 	 }
 	 
 	 
