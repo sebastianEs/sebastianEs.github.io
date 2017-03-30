@@ -52,6 +52,7 @@
 	 
   });
   secBtn.addEventListener('click', function(event) {
+	  console.log("secret klick")
 	 if( firebase.auth().currentUser.providerData[0].displayName != null ) {
 		 secImg.style.visibility="visible";
 	 }
