@@ -33,6 +33,7 @@
   let btnCont =document.getElementById('container');
   secBtn.disabled=true;
   console.log('secret är inte redo')
+  secImg.style.visibility="hidden";
   /*!!!!!!!!!!!!!!knapp events!!!!!!!!!!!!!!!!!*/
   authBtn.addEventListener('click', function(event) {
      cont.style.display="block";
@@ -45,8 +46,17 @@
 	 } else {
 		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
 		  secBtn.disabled=false;
+		 
 	 }
 	 showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
+	 
+  });
+  secBtn.addEventListener('click', function(event) {
+	 if( firebase.auth().currentUser.providerData[0].displayName != null ) {
+		 secImg.style.visibility="visible";
+	 }
+		 secImg.style.visibility="hidden";
+	 
 	 
   });
   logOutBtn.addEventListener('click', function(event) {
