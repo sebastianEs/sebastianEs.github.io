@@ -25,11 +25,13 @@
   
    let showUser = document.getElementById('showUser');
    let showImg = document.getElementById('showImg');
-  
+  let secBtn = document.getElementById('secretBtn');
+  let secImg = document.getElementById('secretImg');
   let authBtn = document.getElementById('auth-btn');
   let logOutBtn = document.getElementById('logOut');
   let cont = document.getElementById('hide-container');
   let btnCont =document.getElementById('container');
+  secBtn.disabled=true;
   /*!!!!!!!!!!!!!!knapp events!!!!!!!!!!!!!!!!!*/
   authBtn.addEventListener('click', function(event) {
      cont.style.display="block";
@@ -37,10 +39,14 @@
 	 logInUser();	 
 	 if( firebase.auth().currentUser.providerData[0].displayName === null ) {
 		 showUser.innerHTML=firebase.auth().currentUser.providerData[0].email;
+		 secBtn.disabled=false;
+		 console.log('secret är tillgänglig')
 	 } else {
 		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
+		  secBtn.disabled=false;
 	 }
 	 showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
+	 
   });
   logOutBtn.addEventListener('click', function(event) {
 	cont.style.display="none";

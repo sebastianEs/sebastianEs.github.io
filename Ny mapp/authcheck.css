@@ -30,11 +30,9 @@ button {
 	margin: auto;
 	height: 600px;
 	display: none;
-	
+	background-color: white;
 }
-#secretBtn, #logOut {
-	display: inline;
-}
+
 #showImg {
 	display: block;
 	background-size: cover;
