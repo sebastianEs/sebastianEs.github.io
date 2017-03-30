@@ -55,6 +55,7 @@
 	  console.log("secret klick")
 	 if( firebase.auth().currentUser.providerData[0].displayName != null ) {
 		 secImg.style.visibility="visible";
+		 secImg.src="img/saywhatagain.jpg";
 	 }
 		 secImg.style.visibility="hidden";
 	 
