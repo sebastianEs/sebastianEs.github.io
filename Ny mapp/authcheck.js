@@ -60,6 +60,7 @@
 	 } else {
 		 secImg.style.visibility="hidden";
 		 console.log("bilden är borta!")
+		 secImg.src="";
 	 }
 	 
 	 
