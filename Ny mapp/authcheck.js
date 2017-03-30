@@ -67,6 +67,8 @@
 	  logOutUser();
 	 // showUser.innerHTML="";
 	//showImg.src="";
+	h =document.getElementById('h')
+	h.innerHTML="User is signed out. click on button to login.";
 	cont.style.display="none";
 	btnCont.style.visibility="visible";
     secBtn.disabled=true;
