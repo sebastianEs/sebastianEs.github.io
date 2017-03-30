@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>webshop</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="webshop.css">
+</head>
+<body>
+    <div id="container">
+	<input type="text" id="add"/>
+	<button id="sortByName">Sortera efter namn</button>
+	<button id="sortByName">Sortera efter pris</button>
+	<ul></ul>
+	</div>
+	
+	
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBDUTahARf3YIFH4pDWukmZw53cTSLgCm4",
+    authDomain: "webshop-ce2ac.firebaseapp.com",
+    databaseURL: "https://webshop-ce2ac.firebaseio.com",
+    storageBucket: "webshop-ce2ac.appspot.com",
+    messagingSenderId: "853776856918"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="webshop.js"></script>
+</body>
+</html>
