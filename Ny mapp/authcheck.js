@@ -26,14 +26,14 @@
 	if( firebase.auth().currentUser.providerData[0].displayName === null ) {
 		 showUser.innerHTML=firebase.auth().currentUser.providerData[0].email;
 		 secBtn.disabled=false;
-		 console.log('secret är tillgänglig')
+		 
 	 } else {
 		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
 		  secBtn.disabled=false;
 	 }
 	  
 	let user = result.user;
-	console.log(user)
+	console.log(user);
 	showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
 	});
 	}
@@ -69,15 +69,14 @@
      btnCont.style.visibility="hidden";
   });
   secBtn.addEventListener('click', function(event) {
-	  console.log("secret klick")
+	  
 	 if( firebase.auth().currentUser.providerData[0].email !== null ) {
 		 secImg.style.visibility="visible";
 		 secImg.src="saywhatagain.jpg";
-		 console.log("bilden visas!")
+		 
 	 } else {
 		 secImg.style.visibility="hidden";
-		 console.log("bilden är borta!")
-		 //secImg.src="";
+		
 	 }
 	 
 	 
@@ -89,8 +88,6 @@
   })
   logOutBtn.addEventListener('click', function(event) {
 	  logOutUser();
-	 // showUser.innerHTML="";
-	//showImg.src="";
 	
 	cont.style.display="none";
 	btnCont.style.visibility="visible";
