@@ -46,9 +46,9 @@
 		  showUser.innerHTML=firebase.auth().currentUser.providerData[0].displayName;
 		  secBtn.disabled=false;
 	 }
-	 showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
 	 cont.style.display="block";
      btnCont.style.visibility="hidden";
+	 showImg.src=firebase.auth().currentUser.providerData[0].photoURL;
   });
   secBtn.addEventListener('click', function(event) {
 	  console.log("secret klick")
