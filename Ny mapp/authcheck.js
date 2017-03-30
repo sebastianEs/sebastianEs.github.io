@@ -6,15 +6,13 @@
   .then(function(result) {
 	
 	let user = result.user;
-  
+	console.log(user)
 	});
 	}
 	/*!!!!!!!!!!!!!logout!!!!!!*/
 	function logOutUser() {
 	firebase.auth().signOut()
     .then(function(result) {
-	showUser.innerHTML="";
-	showImg.src="";
 	console.log("signed out!")
   })
    .catch(function(error) {
@@ -66,6 +64,8 @@
   });
   logOutBtn.addEventListener('click', function(event) {
 	  logOutUser();
+	 // showUser.innerHTML="";
+	//showImg.src="";
 	cont.style.display="none";
 	btnCont.style.visibility="visible";
     secBtn.disabled=true;
