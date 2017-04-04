@@ -10,17 +10,17 @@ window.addEventListener('load', function() {
 	let sortBySort=document.getElementById('sortBySort');
 	let quantList=document.getElementById('objectList');
 	let table=document.getElementById('td');
-	
+	let db=firebase.database();
 	
 	addBtn.addEventListener('click', function(event) {
-		let db=firebase.database();
+		
 		db.ref('items/').push({
 			name: iName.value,
 			sort: iSort.value,
 			price: Number(iPrice.value),
 			quantity: Number(quantList.value)
 		});
-		
+	});
 		db.ref('items/').on('child_added', function(snapshot, prevChildKey) {
 	 
 	     let data = snapshot.val();
@@ -28,11 +28,15 @@ window.addEventListener('load', function() {
 });
    //    function som lägger till produkter
    function addToList(data) {
+	    if( table != null ) {
 		let tr=document.createElement('tr');
 		tr.innerHTML=`<td style="font-size:130%;">${data.name}</td> 
 		<td style="font-size:130%;">${data.sort}</td> <td style="font-size:130%;">${data.price}</td> ${'KR'}`;
-		
 		table.appendChild(tr);
+		} else {
+			tr.innerHTML='';
+			console.log("objekten skrivs bara ut 1 gång")
+		}
 	}
    //    function som sorterar alla produkter
     function sortData(sortBtn,sortItems) {
@@ -64,9 +68,9 @@ window.addEventListener('load', function() {
 			})
 		
 		}
-	});
+		
+	 });
 	
-	});
 	
 	
 });
