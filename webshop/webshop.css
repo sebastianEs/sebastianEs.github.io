@@ -38,11 +38,16 @@ button:hover {
 }
 #td {
    border: 1px solid lightgray;
-   width: 40vw;   
+   width: 30vw;   
    display: block;
    margin-left: 15px;
    overflow-y: scroll;
    height: 100%;
+}
+td {
+	padding: 5px;
+	border: 1px solid lightgray;
+	width: 110px;
 }
 
 

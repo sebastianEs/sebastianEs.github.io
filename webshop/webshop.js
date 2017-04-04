@@ -29,8 +29,9 @@ window.addEventListener('load', function() {
    //    function som lägger till produkter
    function addToList(data) {
 		let tr=document.createElement('tr');
-		tr.innerHTML=`<td>${data.name}</td> 
-		<td>${data.sort}</td> <td>${data.price}</td> ${'KR'}`;
+		tr.innerHTML=`<td style="font-size:130%;">${data.name}</td> 
+		<td style="font-size:130%;">${data.sort}</td> <td style="font-size:130%;">${data.price}</td> ${'KR'}`;
+		
 		table.appendChild(tr);
 	}
    //    function som sorterar alla produkter
