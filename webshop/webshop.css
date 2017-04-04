@@ -1,8 +1,48 @@
 body {
    margin: 0;
    padding: 0;
+   background-color: #dbcece;
+   font-size: 14px;
 }
+h1, h2 {margin-left:15px;}
 #container {
 	border: 1px solid gray;
-	background-color: #dbcece;
+	display: block;
+	width: 100vw;
+	background-color: white;
+	height: 80vh;
 }
+.inputContent {
+	border-bottom: 1px solid lightgray;
+	height: 40px;
+}
+.userContent {
+	margin-top: 10px;
+	height: 20vh;
+}
+input {
+	padding: 5px;
+	margin-left: 15px;
+	font-size: 130%;
+}
+button {
+	padding: 5px;
+	margin-top: 5px;
+	margin-left: 15px;
+	background-color: #7093ff;
+	border: 1px solid #7093ff;
+	font-size: 130%;
+}
+button:hover {
+	border: 1px solid black;
+}
+#td {
+   border: 1px solid lightgray;
+   width: 40vw;   
+   display: block;
+   margin-left: 15px;
+   overflow-y: scroll;
+   height: 100%;
+}
+
+
