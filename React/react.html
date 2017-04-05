@@ -7,7 +7,10 @@
 
 <script src="https://unpkg.com/react@latest/dist/react.js"></script>
 <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
-<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+
 
 <style>
 body {
@@ -21,6 +24,8 @@ body {
   width: 50vw;
   margin: auto;
   border: 1px solid black;
+  height: 50vh;
+  background-color: white;
   position: relative;
   -webkit-transform: translateY(50%);
 	-ms-transform: translateY(50%);
@@ -37,10 +42,9 @@ body {
 </head>
 <body>
    <div id="app">
-    <input type="text" id="myInput"/>
-	<div>Svar: </div>
+    
    </div>
    
-   <script src="react.js"></script>
+   <script src="react.js" type="text/babel"></script>
 </body>
 </html>
