@@ -1,4 +1,10 @@
 
+const getMessage = () => "Good morning Sebastian";
+document.getElementById('app').innerHTML = getMessage();
+/*
+var React = require('react');
+var ReactDOM = require('react-dom');
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -29,3 +35,4 @@ ReactDOM.render(
 document.getElementById('app');
 )
 console.log("hello world");
+*/
