@@ -1,38 +1,19 @@
 
-const getMessage = () => "Good morning Sebastian";
-document.getElementById('app').innerHTML = getMessage();
-/*
-var React = require('react');
-var ReactDOM = require('react-dom');
-
-class App extends React.Component {
-    constructor(props) {
-        super(props);
+export default class App extends React.Component {
+    constructor() {
+        super();
         this.state = {
-            text: ''
+            text: 'Wellcome',
         };
-        this.inputTest = this.inputTest.bind(this);
-    }
-     
-        inputTest(event) {
-            this.setState({
-                text: event.target.value
-            })
-            
-        }
-    render() {
-        return (
-			console.log("here i am!")
-            <div>
-              
-            </div>
-		);
     }
     
+    changeText(text) {
+        this.setState({text});
+    }
+    render() {
+        return <div>
+            <p changeText={this.changeText.bind(this)} text={this.state.text}></p>
+            
+            </div>
+    }
 }
-
-ReactDOM.render(
-document.getElementById('app');
-)
-console.log("hello world");
-*/
