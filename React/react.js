@@ -51,6 +51,7 @@ class Numbers extends React.Component {
     render() {
         return (
         <div className="numbers">
+            <span>Calculate numbers</span>
             <GetResult handleKeyUp={this.handleKeyUp1} count={this.state.result1 * this.state.result2} />
             <GetResult handleKeyUp={this.handleKeyUp2} count={this.state.result2 * this.state.result1} />
         </div>
@@ -88,7 +89,7 @@ class ClickBtn extends React.Component {
     handleFirstBtn(event) {
         if( this.state.className === 'blue' ) {
         this.setState({ text: "First button pressed" })
-        this.setState({className:"white"})
+        this.setState({className:"red"})
             } else  {
         this.state.className2='';
         this.setState({ text: "First button pressed" })
@@ -99,7 +100,7 @@ class ClickBtn extends React.Component {
         
         if( this.state.className2 === 'blue' ) {
         this.setState({ text: "Second button pressed" })
-        this.setState({className2:"white"})
+        this.setState({className2:"red"})
             } else {
         this.state.className='';
         this.setState({ text: "Second button pressed" })
@@ -110,9 +111,9 @@ class ClickBtn extends React.Component {
     
     render() {
         return (
-            <div className="thirdPart">
+            <div className="buttonDiv">
             <button onClick={this.handleFirstBtn} className={this.state.className}>First button</button>
-            <button onClick={this.handleSecondBtn} className={this.state.className2}>Second button</button>
+            <button onClick={this.handleSecondBtn} className={this.state.className2} >Second button</button>
             <br/>
             <span>{this.state.text}</span>
             </div>
