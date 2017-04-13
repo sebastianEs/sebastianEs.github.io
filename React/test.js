@@ -1,6 +1,6 @@
 
 
-let searchObj1 ={
+/*let searchObj1 ={
     title: "JavaScript Tutorial - W3Schools",
     url: "https://www.w3schools.com./js/",
     description: "JavaScript is the programming language of HTML and the Web. JavaScript is easy to learn. This tutorial will teach you JavaScript from basic to advanced."
@@ -12,18 +12,22 @@ let searchObj2 ={
      description: "Se alla dina favoriter bland videor och musik, ladda upp originalinnehåll och dela allt med vänner, familj och hela världen på YouTube."
 };
 
-class SearchResultList  extends React.Component {
-    render() {
-        return <div>
-            <SearchResult item={this.props.r1} />
-            <SearchResult item={this.props.r2} />
-            <SearchResult item={this.props.r3} />
-            </div>;
-    }
+let myList = [searchObj1,searchObj2,searchObj2];
+
+class SearchResultList extends React.Component {
+	render() {
+		//const newList = this.props.list.map( element => <SearchResult item={element} /> );
+		return <ol>{newList}</ol>;
+	}
 }
+ 
+
+               /*<ul><SearchResult item={this.props.r1} /></ul>
+               <ul><SearchResult item={this.props.r1} /></ul>
+               <ul><SearchResult item={this.props.r1} /></ul>
 class SearchResult extends React.Component {
     render() {
-        return   <div className="results">
+        return   <li className="results">
         
         <a href={this.props.item.url}>{this.props.item.title}</a>
         <br/>
@@ -31,7 +35,7 @@ class SearchResult extends React.Component {
     </span>
        <br/>
        <span>{this.props.item.description}</span>
-    </div>;
+    </li>;
     }
 }
 
@@ -56,7 +60,7 @@ class Login extends React.Component {
             {this.state.isToggleOn ? 'Sign In' : 'Sign Out'}
         </button></div>;
     }
-}
+}*/
 //     Skapa en komponent med två knappar, med texten "öka" och "minska". Den ska också skriva ut värdet 1. När man //     klickar på någon knapp ska värdet ändras.
 
 class MyButtons extends React.Component {
@@ -79,6 +83,12 @@ class MyButtons extends React.Component {
             value: this.state.value -10
         })
     }
+    /*firstButtonStyle() {
+        this.setState({
+            color: 'blue',
+            style: 
+        })
+    }*/
     render() {
         return (
             <div className="myButton">
@@ -90,22 +100,43 @@ class MyButtons extends React.Component {
     }
 }
 
-class Value extends React.Component {
-    render() {
-        
-        return (
-          <span>Värdet är: {this.props.txt}</span>
+function Value(props) {
+     return (
+          <span>Värdet är: {props.txt}</span>
         );
+}
+
+
+// skapa en komponent med ett texfält, när användaren skriver i fältet ska texten krypteras
+
+class Cryptic extends React.Component {
+    render() {
+    return (   <div>
+            skriv något!
+            <input type="text" onKeyPress={this.handleKeyPress} />
+            </div>
+           );
+    }
+    handleKeyPress(event) {
+        const words ='abcdefghijklmnopqrstuvwxzy';
+        let position = words.indexOf(event.key);
+        if( position >= 0 ) {
+            let newChar = words.substring(position+1,position+2);
+            event.target.value += newChar;
+            event.preventDefault();
+        } else {
+            console.log('wrong word or key')
+        }
     }
 }
 
 
-
 ReactDOM.render( 
     
-    <SearchResultList  r1={searchObj1} r2={searchObj2} r3={searchObj2} />,
+    //<SearchResultList  myList={myList} />,
     //<Login />,
     //<MyButtons msg/>,
+    <Cryptic />,
     document.getElementById("container")
 );
 console.log("hello world");

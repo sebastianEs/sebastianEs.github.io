@@ -3,14 +3,15 @@ body {
   padding:0;
   font-size:20pt;
   height: 100vh;
+  background-color: #3d3f4c;
 }
 
 #app {
     border: 1px solid gray;
-    width: 600px;
+    width: 50%;
     height: 600px;
     background-color: cornflowerblue;
-    margin-top: 40px;
+    margin: auto;
         
 }
 .result {
@@ -20,7 +21,7 @@ body {
 .result span {
     font-size: 25pt;
 }
-
+h1 {text-align: center;}
 
 .numbers {
     display: block;
@@ -46,4 +47,11 @@ button {
     margin: 2px;
     font-size: 22pt;
     color: red;
+    
+}
+.blue {
+    background-color: blue;
+}
+.red {
+    background-color: red;
 }

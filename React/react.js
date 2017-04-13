@@ -13,14 +13,13 @@ class App extends React.Component {
     
     changeText(event) {
         this.setState({text: event.target.value});
-        console.log("setState ändrar innehåll " + event.target.value);
     }
     render() {
     
         return <div className="result">
-            <span>{this.state.text}</span>
+            <h1>React Application</h1>
             <input onChange={this.changeText} placeholder="Your name" />
-            
+            <span>{this.state.text}</span>
             </div>
     }
 }
@@ -78,29 +77,42 @@ class ClickBtn extends React.Component {
     constructor(props) {
         super(props)
         this.state ={
+            text: '',
+            color: 'blue'
             
-            text: ''
         }
-        this.firstbtn = this.firstbtn.bind(this);
-        this.secbtn = this.secbtn.bind(this);
+        this.handleFirstBtn = this.handleFirstBtn.bind(this);
+        this.handleSecondBtn = this.handleSecondBtn.bind(this);
        
     }
-    firstbtn(event) {
-        this.setState({
-            text: "First button pressed"
-        })
+    handleFirstBtn(event) {
+        if( this.state.className === 'blue' ) {
+        this.setState({ text: "First button pressed" })
+        this.setState({className:"white"})
+            } else  {
+        this.state.className2='';
+        this.setState({ text: "First button pressed" })
+        this.setState({className:"blue"})
+            }
     }
-    secbtn(event) {
-        this.setState({
-            text: "Second button pressed"
-        })
+    handleSecondBtn(event) {
+        
+        if( this.state.className2 === 'blue' ) {
+        this.setState({ text: "Second button pressed" })
+        this.setState({className2:"white"})
+            } else {
+        this.state.className='';
+        this.setState({ text: "Second button pressed" })
+        this.setState({className2:"blue"})
+            }
     }
+   
     
     render() {
         return (
             <div className="thirdPart">
-            <button onClick={this.firstbtn} style={styles.blue}>First button</button>
-            <button onClick={this.secbtn} >Second button</button>
+            <button onClick={this.handleFirstBtn} className={this.state.className}>First button</button>
+            <button onClick={this.handleSecondBtn} className={this.state.className2}>Second button</button>
             <br/>
             <span>{this.state.text}</span>
             </div>
@@ -109,26 +121,8 @@ class ClickBtn extends React.Component {
     }
 }
 
-class ColorPicker extends React.Component {
-    render() {
-        const styles = reactCSS({
-            'deafault': {
-                blue: {
-                    color: 'blue',
-                },
-                color: 'red',
-            }
-        })
-    }
-}
 
-/*const Styles = StyleSheet.create({
-        blue: {
-            backgroundColor: 'blue',
-            
-        }
-    });
-*/
+
 function Setup(){
     return(
         <div>
