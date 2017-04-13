@@ -5,7 +5,7 @@
     <title>React application</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="react.css">
+    <link rel="stylesheet" href="react.css" />
     <script src="https://unpkg.com/react@latest/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -13,10 +13,14 @@
 </head>
 
 <body>
-    <div class="searchResult" id="app">
+    <div class="results" id="app">
         utan react
-        <p>Testing</p>
-       <input type="text" onChange={this.handleChange} placeholder="Wellcome!"/>
+        <span>wellcome</span>
+       <input type="text" />
+       <div id="multiply-content">
+       <input type="text"/>
+       <input type="text"/>
+       </div>
     </div>
 
     <script src="react.js" type="text/babel"></script>

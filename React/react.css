@@ -7,17 +7,43 @@ body {
 
 #app {
     border: 1px solid gray;
-    width: 400px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     background-color: cornflowerblue;
-    margin-left: 20px;
-    margin-top: 50px;
+    margin-top: 40px;
         
 }
+.result {
+    display: block;
+    
+}
+.result span {
+    font-size: 25pt;
+}
+
+
+.numbers {
+    display: block;
+    height: 200px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
 input {
-    padding: 5px;
-    line-height: 5px;
+    padding: 7px;
     margin-left: 10px;
     width: 50%;
+    font-size: 22pt;
+    margin: 2px;    
 }
-p {margin-left: 10px;}
+span {
+    margin-left: 10px;
+    margin-right: 2px;
+    font-weight: bold;
+}
+button {
+    padding: 10px;
+    margin: 2px;
+    font-size: 22pt;
+    color: red;
+}
