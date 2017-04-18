@@ -49,8 +49,8 @@ i {
 
 
 /*--------------------HEAD SECTION BEGINS---------------*/
-#header-conteiner {
-	background-image: url('img/gbg1.jpg');
+#header-container {
+	background-image: url('img/background-4kjpg.jpg');
 	background-repeat: no-repeat;
 	height: 100vh;
 	background-size: cover;
@@ -84,8 +84,6 @@ i {
 	display: inline;
 	color: white;
 	margin-right: 10px;
-	
-	
 }
 #navbar ul li a {
 	text-decoration: none;
@@ -135,9 +133,9 @@ i {
 }
 #middle {
 	width: 40vw; 
-	float: left;
-	padding: 5px 15px;
-	margin: 0px 5px 5px 5px;
+    float: left;
+	padding: 5px 5px;
+	margin: 0px auto 5px auto;
 }
 #middle ul {
 	list-style: none;
@@ -163,6 +161,7 @@ i {
 .infocap {
 	border: 1px solid lightgray;
 	border-radius: 10px;
+    
 }
 
 #about {
@@ -255,6 +254,12 @@ i {
 	#navbar {
 		top: 10px;
 	}
+    #navbar ul {
+        margin-top: 13px;
+    }
+    #navbar ul li a{
+        font-size: 150%; 
+    }
 
 }
 

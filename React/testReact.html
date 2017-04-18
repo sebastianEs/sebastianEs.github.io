@@ -5,32 +5,80 @@
     <title>React application</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="react.css">
+    
     <script src="https://unpkg.com/react@latest/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <style>
-         body {
-            font-size: 20pt;
-         }
-         .green {
-            color: green;
-         }  
-        .myButton button {
-            padding: 5px;
-            color: blue;
-            margin: 5px;
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-size: 14px;
         }
-        .myButton {
-            border: 1px solid black;
-            background-color:beige;
+        #app {
+            width: 80vw;
+            height: 50vh;
+            border: 1px solid gray;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: darkgray
         }
+        .input-content {
+            width: 40%;
+            height: 50%;
+            border: 1px solid lightgray;
+            display: block;
+            float: left;
+            position: relative;
+            left: 8%;
+            
+        }
+        .show-content {
+            width: 40%;
+            border: 1px solid lightgray;    
+            position: relative;
+            float: left;
+            left: 12%;
+            height: 50%;
+        }
+        .input-content input {
+            padding: 8px;
+            margin: 6px;
+            border-radius: 6px;
+            font-size: 120%;
+            display: block;
+        }
+        .show-content input {
+            padding: 8px;
+            margin: 6px;
+            border-radius: 6px;
+            font-size: 110%;
+            margin-left: 60%;
+            
+        }
+        #app .input-content, #app .show-content {
+            margin-top: 5px;
+            background-color: white;
+        }
+        input:hover {
+            border: 1px solid blue;
+        }
+        
+        
     </style>
 </head>
 
 <body>
-    <div class="searchResult" id="container">
-       
+   utan React
+    <div id="app">
+       <div class="input-content">
+        <input type="text" placeholder="Förnamn" />
+        <br>
+        <input type="text" placeholder="Efternamn" />
+    </div>
+    <div class="show-content">
+        <input type="text" placeholder="Avatar" />
+    </div>
     </div>
 
     <script src="test.js" type="text/babel"></script>

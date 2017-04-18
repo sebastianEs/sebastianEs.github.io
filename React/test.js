@@ -62,7 +62,7 @@ class Login extends React.Component {
     }
 }*/
 //     Skapa en komponent med två knappar, med texten "öka" och "minska". Den ska också skriva ut värdet 1. När man //     klickar på någon knapp ska värdet ändras.
-
+/*
 class MyButtons extends React.Component {
     
     constructor(props) {
@@ -82,13 +82,14 @@ class MyButtons extends React.Component {
         this.setState({
             value: this.state.value -10
         })
-    }
+    }*/
     /*firstButtonStyle() {
         this.setState({
             color: 'blue',
             style: 
         })
     }*/
+    /*
     render() {
         return (
             <div className="myButton">
@@ -129,14 +130,57 @@ class Cryptic extends React.Component {
         }
     }
 }
+*/
+//  två komponenter en som innehåller två textfält och en annan som visar ett avatar namn. alla fält ska gå
+//  att ändra men om det finns en avatar ska den skriva över ett "förvalt namn".
 
+class App extends React.Component {
+    render() {
+    return (
+    <div id="app">
+       <NameComponent />
+       <AvatarComponent />
+    </div>
+        );
+    }
+}
+class NameComponent extends React.Component {
+    render () {
+        return (
+          
+           <div className="input-content">
+           <input type="text" placeholder="Förnamn" />
+            <br/>
+           <input type="text" placeholder="Efternamn" />
+          
+        );
+    }
+}
+class AvatarComponent extends React.Component {
+    render () {
+        return (
+           <div className="show-content">
+            <input type="text" placeholder="Avatar" />
+           </div>
+        );
+    }
+}
 
 ReactDOM.render( 
-    
     //<SearchResultList  myList={myList} />,
     //<Login />,
     //<MyButtons msg/>,
-    <Cryptic />,
-    document.getElementById("container")
+    //<Cryptic />,
+     <div id="app">
+       <div className="input-content">
+        <input type="text" placeholder="Förnamn" />
+        <br/>
+        <input type="text" placeholder="Efternamn" />
+    </div>
+    <div className="show-content">
+        <input type="text" placeholder="Avatar" />
+    </div>
+    </div>,
+    document.getElementById("app")
 );
 console.log("hello world");
