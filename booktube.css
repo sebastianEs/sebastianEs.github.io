@@ -69,11 +69,6 @@ body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;
 	font-size: 110%;
 	height: 50vh;
 	margin-bottom: 0px;
-	background-image: url('img/relax.png');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: bottom;
-	
 	border-radius: 50%;
 }
 

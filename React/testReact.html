@@ -15,51 +15,22 @@
             padding: 0px;
             font-size: 14px;
         }
-        #app {
+        .flex {
             width: 80vw;
             height: 50vh;
             border: 1px solid gray;
-            margin-left: auto;
-            margin-right: auto;
+            display: flex;
+            flex-direction: row;
             background-color: darkgray
         }
-        .input-content {
+        .flex > .row {
             width: 40%;
             height: 50%;
             border: 1px solid lightgray;
-            display: block;
-            float: left;
-            position: relative;
-            left: 8%;
-            
+            flex: 1;
         }
-        .show-content {
-            width: 40%;
-            border: 1px solid lightgray;    
-            position: relative;
-            float: left;
-            left: 12%;
-            height: 50%;
-        }
-        .input-content input {
-            padding: 8px;
-            margin: 6px;
-            border-radius: 6px;
-            font-size: 120%;
-            display: block;
-        }
-        .show-content input {
-            padding: 8px;
-            margin: 6px;
-            border-radius: 6px;
-            font-size: 110%;
-            margin-left: 60%;
-            
-        }
-        #app .input-content, #app .show-content {
-            margin-top: 5px;
-            background-color: white;
-        }
+  
+       
         input:hover {
             border: 1px solid blue;
         }
@@ -70,13 +41,13 @@
 
 <body>
    utan React
-    <div id="app">
-       <div class="input-content">
+    <div id="app" class="flex">
+       <div class="row">
         <input type="text" placeholder="Förnamn" />
         <br>
         <input type="text" placeholder="Efternamn" />
     </div>
-    <div class="show-content">
+    <div class="row">
         <input type="text" placeholder="Avatar" />
     </div>
     </div>

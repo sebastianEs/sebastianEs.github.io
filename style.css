@@ -46,6 +46,10 @@ i {
 	cursor: pointer;
 	
 }
+a {
+    background-color: transparent;
+    text-align: center;
+}
 
 
 /*--------------------HEAD SECTION BEGINS---------------*/
@@ -110,6 +114,7 @@ i {
 	width: 40vw;
 	float: left;
 	padding: 5px 15px;
+    margin: 0px auto 5px 5%;
 }
 #content ul {
 	margin-top: 5px;
@@ -135,7 +140,7 @@ i {
 	width: 40vw; 
     float: left;
 	padding: 5px 5px;
-	margin: 0px auto 5px auto;
+	margin: 0px auto 5px 5%;
 }
 #middle ul {
 	list-style: none;
@@ -161,9 +166,29 @@ i {
 .infocap {
 	border: 1px solid lightgray;
 	border-radius: 10px;
-    
+    width: 100%;
+    overflow: auto;
+    display: block;
+    height: 400px;
+    padding: 4px;
+    margin-bottom: 20px;
 }
-
+.infocap img {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    max-height: 340px;
+    min-width: 200px;
+}
+.infocap a > img {
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-position: top;
+}
+.infocap img:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
 #about {
 	height: 30%;
 	width: 100%;
@@ -186,6 +211,7 @@ i {
 	float: right;
 	margin: 0 0 10px 10px;
 }
+
 /*---------------	FOOTER SECTION--------------------*/
 
 
@@ -212,6 +238,11 @@ i {
 		width: 41%;
 		padding: 1% 4%;
 	}
+    .infocap img {
+        max-height: 210px;
+        min-width: 100px;
+        border: none;
+    }
 	#middle {
 		width: 41%;
 		padding: 1% 4%;

@@ -86,7 +86,7 @@ class MyButtons extends React.Component {
     /*firstButtonStyle() {
         this.setState({
             color: 'blue',
-            style: 
+            style: ''
         })
     }*/
     /*
@@ -135,35 +135,58 @@ class Cryptic extends React.Component {
 //  att ändra men om det finns en avatar ska den skriva över ett "förvalt namn".
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            avatarName: ''
+        };
+        this.setAvatarName = this.setAvatarName.bind(this);
+    }
     render() {
     return (
-    <div id="app">
-       <NameComponent />
-       <AvatarComponent />
-    </div>
+       <div id="app">
+         <NameComponent setAvatarName={this.setAvatarName}/>
+         <AvatarComponent />
+        
+       </div>
         );
     }
+    setAvatarName(name) {
+        this.setState({
+            avatarName: name
+        });
+    }
+    
 }
+
 class NameComponent extends React.Component {
-    render () {
+    constructor(props) {
+        super(props);
+        this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
+    }
+    render() {
         return (
-          
            <div className="input-content">
-           <input type="text" placeholder="Förnamn" />
-            <br/>
-           <input type="text" placeholder="Efternamn" />
+             <input type="text" placeholder="Förnamn" onChange=
+             {this.handleChangeFirstName}/>
+             <br/>
+           <input type="text" placeholder="Efternamn"  />
           
         );
     }
+   
 }
+
 class AvatarComponent extends React.Component {
-    render () {
+    render() {
         return (
            <div className="show-content">
-            <input type="text" placeholder="Avatar" />
+            <input type="text" placeholder="Avatar" 
+            value={this.props.avatarName} onChange={this.handleChange} />
            </div>
         );
     }
+   
 }
 
 ReactDOM.render( 
@@ -171,16 +194,6 @@ ReactDOM.render(
     //<Login />,
     //<MyButtons msg/>,
     //<Cryptic />,
-     <div id="app">
-       <div className="input-content">
-        <input type="text" placeholder="Förnamn" />
-        <br/>
-        <input type="text" placeholder="Efternamn" />
-    </div>
-    <div className="show-content">
-        <input type="text" placeholder="Avatar" />
-    </div>
-    </div>,
+     <App />,
     document.getElementById("app")
 );
-console.log("hello world");

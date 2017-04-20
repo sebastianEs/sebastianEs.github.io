@@ -1,0 +1,55 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-family: 'arial', 'verdana', 'sans-serif';
+}
+#app {
+    display: flex;
+    padding: 30px 0 0 30px;
+    border: 1px solid white;
+    height: 50vh;
+    width: 90vw;
+    margin: auto;
+    background-color: dimgray;
+}
+
+#app > .row {
+    flex: 1 auto;
+    border: 1px solid white;
+}
+h2 {
+    text-align: center;
+    color: white;
+}
+input {
+    padding: 5px;
+    border: 1px solid black;
+    font-size: 120%;
+}
+label {
+    font-size: 120%;
+    color: white;
+}
+ul {
+    border: 1px solid white;
+}
+ul li {
+    list-style: none;
+    color: chartreuse;
+    cursor: pointer;
+    font-size: 110%;
+}
+button {
+    padding: 5px;
+    background-color: chartreuse;
+    color: black;
+    border: 1px solid black;
+    font-size: 120%;
+}
+button:hover {
+    border: 1px solid chartreuse;
+    background-color: black;
+    color: chartreuse;
+    cursor: pointer;
+}
