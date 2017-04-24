@@ -1,26 +1,42 @@
 
 // App är gemensam komponent för formulär och listan
-const numberList = [
-     {id: 1, name: 'Sebastian', phone: '071 000111'},
-    {id: 2,name: 'Helena', phone: '072 200222'},
-    {id: 3,name: 'Mikael', phone: '073 300333'},
-     {id: 4,name: 'Angelica', phone: '074 400444'},
-]
+ 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            numberList: []
+            isClicked: 0,
+            numberList: [
+     {id: 1, name: 'Sebastian', phone: '071 000111'},
+     {id: 2,name: 'Helena', phone: '072 200222'},
+     {id: 3,name: 'Mikael', phone: '073 300333'},
+     {id: 4,name: 'Angelica', phone: '074 400444'},
+]
         }
+        this.handleContactAdd=this.handleContactAdd.bind(this); 
+       
     }
     render() {
        return ( <div className="container" id="app">
        
-          <AddForm addContacts={this.props.handleSubmit}/>
-          <MyList contacts={this.props.newContactsList}/>
+          <AddForm {...this.state} onContactAdd={this.handleContactAdd}/>
+          <MyList {...this.state} numberList={this.state.numberList} handleClick={this.handleClick} />
     </div>
     );
     }
+    handleContactAdd(name,phone) {
+      let newContact = {
+          id: this.state.numberList.length + 1,
+          name: name,
+          phone: phone
+      }
+      this.setState({
+          numberList: this.state.numberList.concat(newContact)
+      })
+       console.log(this.state.numberList.concat(newContact)) 
+    }
+    
+ 
 }
 
 //  Addform lägger till nya objekt i listan
@@ -33,6 +49,7 @@ class AddForm extends React.Component {
             phoneValue: '',
             numberList: props.newContactsList
         }
+        console.log(props.newContactsList)
         this.handleInputName=this.handleInputName.bind(this);
         this.handleInputNumber=this.handleInputNumber.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);    
@@ -41,6 +58,7 @@ class AddForm extends React.Component {
         this.setState({
             nameValue: event.target.value
         })
+        
     }
      handleInputNumber(event) {
         this.setState({
@@ -48,28 +66,32 @@ class AddForm extends React.Component {
         })
     }
     handleSubmit(event) {
-        console.log('name and number was added!' + this.state.nameValue + ' '+ this.state.phoneValue)
         event.preventDefault();
-        let id=Math.floor((Math.random() * 100) + 1);
-        this.setState({
-            //contacts: this.state.contacts.push({id, name, phone})
-            numberList: this.state.nameValue + this.state.phoneValue
-        })
-        this.state.nameValue = '';
-        this.state.phoneValue = '';
+        let id= Math.floor((Math.random() * 100) + 1);
+        let name =  this.refs.nameValue.value;
+        let phone = this.refs.phoneValue.value;
+        
+        if(!name) {
+            alert('Skriv ett namn' );
+            return;
+        }
+        this.props.onContactAdd(name,phone)
+        this.refs.nameValue.value = '';
+        this.refs.phoneValue.value = '';
     }
+    
     render() {
         return (
         <div className="row">
-          <form onSubmit={this.handleSubmit}>
+           <form onSubmit={this.handleSubmit}>
               <h2>Lägg till nya kontakter</h2>
               <label><strong>Name:</strong></label>
-              <input placeholder="Ditt namn" ref="nameValue" onChange={this.handleInputName} />
+              <input placeholder="Ditt namn" ref="nameValue" value={this.props.nameValue} onChange={this.handleInputName} />
               <label ><strong>Phone:</strong></label>
-              <input placeholder="Ditt nummer" ref="phoneValue" onChange={this.handleInputNumber} />
+              <input placeholder="Ditt nummer" ref="phoneValue" value={this.props.phoneValue} onChange={this.handleInputNumber} />
               <br/>
               <button type="submit" value="submit">Submit</button>
-          </form>
+            </form>
           </div>
         );
     }
@@ -77,11 +99,36 @@ class AddForm extends React.Component {
 
 
 class MyList extends React.Component {
+   constructor(props) {
+       super(props);
+       this.state = {
+           name: '',
+           phone: ''
+       }
+       this.handleClick=this.handleClick.bind(this);
+   }
+    
+       handleClick(newContactsList) {
+        console.log(event.currentTarget)
+        this.setState({
+            name: newContactsList.name,
+            phone: newContactsList.phone,
+            isClicked: newContactsList.id
+            
+        })
+          
+    }
   
+   
+    
     render() {
-        const newContactsList =numberList.map(
-        item => <li key={item.id}>Namn: {item.name} <br/> Nummer: {item.phone}</li>
-        );
+        const newContactsList = this.props.numberList.map( list => {
+            return <li list={list} key={list.id}><span 
+                   onClick={this.handleClick}> Namn: 
+                   {list.name} <br/> Nummer: {list.phone}</span>
+                   </li>
+                   
+        })   
         return (
          <div className="row">
           <h2>Kontakter</h2>
@@ -90,8 +137,13 @@ class MyList extends React.Component {
           </ul>
       </div>
         );
-    }
+       
+    };
+                                                         
+                  
 }
+                                                                         
+    
 ReactDOM.render( 
    
      <App />,
