@@ -171,7 +171,7 @@ class NameComponent extends React.Component {
              {this.handleChangeFirstName}/>
              <br/>
            <input type="text" placeholder="Efternamn"  />
-          
+          </div>
         );
     }
    
