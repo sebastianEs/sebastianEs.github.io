@@ -46,11 +46,15 @@ i {
 	cursor: pointer;
 	
 }
+a {
+    background-color: transparent;
+    text-align: center;
+}
 
 
 /*--------------------HEAD SECTION BEGINS---------------*/
-#header-conteiner {
-	background-image: url('img/gbg1.jpg');
+#header-container {
+	background-image: url('img/background-4kjpg.jpg');
 	background-repeat: no-repeat;
 	height: 100vh;
 	background-size: cover;
@@ -84,8 +88,6 @@ i {
 	display: inline;
 	color: white;
 	margin-right: 10px;
-	
-	
 }
 #navbar ul li a {
 	text-decoration: none;
@@ -105,14 +107,14 @@ i {
 }
 #mainwrapper {
 	height: 100%;
-	
 	margin: 0px;
 	padding: 0px;
 }
 #content {
-	width: 590px;
+	width: 40vw;
 	float: left;
 	padding: 5px 15px;
+    margin: 0px auto 5px 5%;
 }
 #content ul {
 	margin-top: 5px;
@@ -121,6 +123,7 @@ i {
 #content ul li {
 	padding: 5px;
 	margin: 5px;
+	text-align: center;
 }
 #content ul li a{
 	text-decoration: none;
@@ -130,11 +133,14 @@ i {
 #content ul li a:hover {
 	color: #db0808;
 }
+#content p {
+	text-align: center;
+}
 #middle {
-	width: 594px; 
-	float: left;
-	padding: 5px 15px;
-	margin: 0px 5px 5px 5px;
+	width: 40vw; 
+    float: left;
+	padding: 5px 5px;
+	margin: 0px auto 5px 5%;
 }
 #middle ul {
 	list-style: none;
@@ -143,6 +149,7 @@ i {
 #middle ul li {
 	padding: 5px;
 	margin: 5px;
+	text-align: center;
 }
 #middle ul li a {
 	text-decoration: none;
@@ -151,37 +158,60 @@ i {
 }
 #middle ul li a:hover {
 	color: #db0808;
+	
+}
+#middle p {
+	text-align: center;
 }
 .infocap {
 	border: 1px solid lightgray;
 	border-radius: 10px;
+    width: 100%;
+    overflow: auto;
+    display: block;
+    height: 400px;
+    padding: 4px;
+    margin-bottom: 20px;
 }
-#about {
-	clear: both;
-	padding: 0 15px;
-	
+.infocap img {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    max-height: 340px;
+    min-width: 200px;
 }
-
-
-
-
+.infocap a > img {
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-position: top;
+}
+.infocap img:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
 #about {
 	height: 30%;
 	width: 100%;
 	display: inline-block;
 	clear: both;
+	padding: 5px 15px 0px 15px;
+	
+}
+#about p {
+	padding-top: 20px;
 }
 .myimg {
 	
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;
-	width: 200px;
-	height: 200px;
+	width: 250px;
+	height: 250px;
 	border-radius: 50%;
 	float: right;
 	margin: 0 0 10px 10px;
 }
+
 /*---------------	FOOTER SECTION--------------------*/
 
 
@@ -208,6 +238,11 @@ i {
 		width: 41%;
 		padding: 1% 4%;
 	}
+    .infocap img {
+        max-height: 210px;
+        min-width: 100px;
+        border: none;
+    }
 	#middle {
 		width: 41%;
 		padding: 1% 4%;
@@ -250,6 +285,12 @@ i {
 	#navbar {
 		top: 10px;
 	}
+    #navbar ul {
+        margin-top: 13px;
+    }
+    #navbar ul li a{
+        font-size: 150%; 
+    }
 
 }
 

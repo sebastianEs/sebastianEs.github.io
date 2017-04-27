@@ -1,0 +1,114 @@
+body {
+  margin:0;
+  padding:0;
+  font-size:20pt;
+  height: 100vh;
+  background-color: #3d3f4c;
+}
+
+#app {
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 50%;
+    height: 800px;
+    background-color: #c5eaf7;
+    margin: auto;
+    font-family: 'arial';
+}
+.result {
+    display: block;
+    
+}
+.result span {
+    font-size: 25pt;
+}
+h1 {text-align: center;}
+
+.numbers {
+    display: block;
+    height: 200px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+input {
+    padding: 7px;
+    margin-left: 10px;
+    width: 50%;
+    font-size: 22pt;
+    margin: 4px;    
+}
+span {
+    margin-left: 10px;
+    margin-right: 2px;
+    font-weight: bold;
+}
+button {
+    padding: 10px;
+    margin: 2px;
+    font-size: 22pt;
+    color: red;
+    
+}
+.buttonDiv {
+    border: 1px solid black;
+    margin-top: 2px;
+    height: 90px;
+}
+.buttonDiv > button {
+   float: left;
+   margin-left: 20px;
+   margin-top: 6px;
+}
+.blue {
+    background-color: blue;
+}
+.white {
+    background-color: red;
+    
+}
+@media screen and (max-width: 880px) {
+	
+	#app {
+		width: 94%;
+        height: 100vh;
+        
+	}
+	.result {
+		width: 81%;
+		padding: 1% 4%;
+	}
+	.numbers {
+		width: 90%;
+		padding: 1% 4%;
+		margin: 0px 0px 5px 5px;
+		float: right;
+        
+	}
+	
+	.buttonDiv {
+		clear: both;
+		padding: 1% 4%;
+		width: auto;
+		float: none;
+        height: 120px;
+	}
+    body {
+        font-size: 18pt;
+    }
+    input {
+        font-size: 16pt;
+        margin: auto;
+    }
+    button {
+        padding: 4px;
+        margin: 2px;    
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+	#app {
+		width: auto;
+		float: none;
+	}
