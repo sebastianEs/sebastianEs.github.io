@@ -1,3 +1,11 @@
+ 
+  var showUser = document.getElementById('showUser');
+  let hideContent = document.getElementById('hide-container');
+  let showContent =document.getElementById('show-container');
+  let signInBtn = document.getElementById('loginBtn');
+  let signOutBtn = document.getElementById('signoutBtn');
+
+
 //     Login with goggle
 function logInGoogle() {
 		let providerG = new firebase.auth.GoogleAuthProvider();
@@ -26,12 +34,6 @@ function logOutUser() {
 	console.log("something went wrong!")
   });
   }
-
-  let showUser = document.getElementById('showUser');
-  let hideContent = document.getElementById('hide-container');
-  let showContent =document.getElementById('show-container');
-  let signInBtn = document.getElementById('loginBtn');
-  let signOutBtn = document.getElementById('signoutBtn');
 
 
   signInBtn.addEventListener('click', function(event) {
