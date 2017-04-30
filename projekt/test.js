@@ -20,7 +20,6 @@ function logInGoogle() {
 function logOutUser() {
 	firebase.auth().signOut()
     .then(function(result) {
-	secBtn.disabled=true;
   })
    .catch(function(error) {
 	// Utloggning misslyckades
@@ -33,7 +32,7 @@ function logOutUser() {
   let showContent =document.getElementById('show-container');
   let signInBtn = document.getElementById('loginBtn');
   let signOutBtn = document.getElementById('signoutBtn');
-  let showUser = document.getElementById('showUser');
+
 
   signInBtn.addEventListener('click', function(event) {
 	  logInGoogle();
