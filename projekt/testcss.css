@@ -11,7 +11,7 @@ body {
 .main-container {
     display: flex;
 }
-.main-container row {
+.main-container > .row {
     flex: 1 auto;
     flex-direction: row;
 }
@@ -43,6 +43,6 @@ body {
 }
 h2 {font-size: 30pt;}
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 900px) {
     
 }
