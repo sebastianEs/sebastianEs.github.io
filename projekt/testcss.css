@@ -35,6 +35,7 @@ body {
     visibility: hidden;
     opacity: 0;
     display: flex;
+    flex-direction: column-reverse;
 }
 #hide-container > .row {
     flex: 1 auto;
