@@ -31,16 +31,17 @@ body {
 }
 
 #hide-container {
-    width: 100%;
-    height: 100vh;
+    width: auto;
+    height: auto;
     visibility: hidden;
     opacity: 0;
     display: flex;
-    flex-direction: column-reverse;
+    transform: translate(0,-350px);
+    -webkit-transform: translate(0,-350px);
+    -o-transform: translate(0,-350px); 
+    -moz-transform: translate(0,-350px);
 }
-.row {
-    height: auto;
-}
+
 #hide-container > .row {
     flex: 1 auto;
     flex-direction: row;
