@@ -40,15 +40,17 @@ body {
     flex: 1 auto;
     flex-direction: row;
 }
-#hide-container > hide-left {
-    text-align: center;
-}
+
 #rightDiv h2, #rightDiv p {
     text-align: center;
 }
-h2 {font-size: 30pt;}
-h4 {font-size: 20pt;}
-#showUser {font-size: 25pt;}
+h2 {font-size: 30pt; text-align: center;}
+h4 {font-size: 20pt; text-align: center;}
+#showUser {font-size: 25pt; text-align: center;}
+
+/*       MEDIA QUERIES     */
+
+
 @media only screen and (max-width: 900px) {
     .row > button {
     padding: 4px;
@@ -62,4 +64,19 @@ h4 {font-size: 20pt;}
     h2 {font-size: 26pt;}
     h4 {font-size: 16pt;}
     #showUser {font-size: 20pt;}
+}
+
+@media only screen and (max-width: 600px) {
+    .row > button {
+    padding: 3px;
+    font-size: 14pt;
+    margin: 15% auto 0 auto;
+    opacity: 0.6;
+    position: relative;
+    float: left;
+    left: 20%;
+}
+    h2 {font-size: 22pt;}
+    h4 {font-size: 12pt;}
+    #showUser {font-size: 16pt;}
 }
