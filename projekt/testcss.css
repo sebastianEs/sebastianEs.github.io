@@ -7,11 +7,9 @@ body {
     height: 100vh;
     visibility: visible;
     opacity: 1;
-}
-.main-container {
     display: flex;
 }
-.main-container .row {
+#show-container > .row {
     flex: 1 auto;
     flex-direction: row;
 }
@@ -36,13 +34,19 @@ body {
     height: 100vh;
     visibility: hidden;
     opacity: 0;
+    display: flex;
+}
+#hide-container > .row {
+    flex: 1 auto;
+    flex-direction: row;
 }
 
 #rightDiv h2, #rightDiv p {
     text-align: center;
 }
 h2 {font-size: 30pt;}
-
+h4 {font-size: 20pt;}
+#showUser {font-size: 25pt;}
 @media only screen and (max-width: 900px) {
     body {
         background-color:floralwhite;
