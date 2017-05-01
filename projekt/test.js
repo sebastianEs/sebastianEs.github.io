@@ -38,12 +38,12 @@ function logOutUser() {
 
   signInBtn.addEventListener('click', function(event) {
 	  logInGoogle();
-	  hideContent.style.display="block";
-      showContent.style.display="none";
+	  hideContent.style.visibility="visible";
+      showContent.style.visibility="hidden";
   })
   signOutBtn.addEventListener('click', function(event) {
 	  logOutUser();
-	  signOutBtn.style.display="none";
-	  signInBtn.style.display="block";
+	  hideContent.style.visibility="hidden";
+	  showContent.style.visibility="visible";
     
   })
