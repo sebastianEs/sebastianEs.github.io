@@ -9,7 +9,6 @@ body {
 }
 .main-container {
     display: flex;
-    justify-content: center;
 }
 .main-container > row {
     flex: 1 auto;
