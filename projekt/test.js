@@ -39,11 +39,14 @@ function logOutUser() {
   signInBtn.addEventListener('click', function(event) {
 	  logInGoogle();
 	  hideContent.style.visibility="visible";
+      hideContent.style.opacity="1";
       showContent.style.visibility="hidden";
+      showContent.style.opacity="0";
   })
   signOutBtn.addEventListener('click', function(event) {
 	  logOutUser();
 	  hideContent.style.visibility="hidden";
 	  showContent.style.visibility="visible";
-    
+      showContent.style.opacity="1";
+      hideContent.style.opacity="0";
   })
