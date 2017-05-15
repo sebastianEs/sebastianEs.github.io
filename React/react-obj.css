@@ -28,8 +28,8 @@ input {
     padding: 7px;
     border: 1px solid black;
     font-size: 120%;
-    width: 50%;
-    
+    width: 40%;
+    margin: 2px;
 }
 
 ul {
@@ -46,12 +46,13 @@ li {
     margin: 4px;
 }
 button {
-    padding: 5px;
+    padding: 7px;
     background-color: chartreuse;
     color: black;
     border: 1px solid black;
     font-size: 120%;
     margin-top: 10px;
+    margin-left: 2px;
 }
 button:hover {
     border: 1px solid chartreuse;
