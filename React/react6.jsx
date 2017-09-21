@@ -1,6 +1,4 @@
 // App är gemensam komponent för formulär och listan
- 
-
 class App extends React.Component {
    constructor(props) {
        super(props);
