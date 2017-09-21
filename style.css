@@ -116,6 +116,7 @@ a {
 	float: left;
 	padding: 5px 15px;
     margin: 0px auto 5px 5%;
+    background-color: white;
 }
 #content ul {
 	margin-top: 5px;
@@ -142,6 +143,7 @@ a {
     float: left;
 	padding: 5px 5px;
 	margin: 0px auto 5px 5%;
+    background-color: white;
 }
 #middle ul {
 	list-style: none;
@@ -226,6 +228,7 @@ a {
 	text-align: center;
     display: block;
 	color: white;
+    font-size: 1.5em;
 }
 
 
