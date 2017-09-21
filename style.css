@@ -93,6 +93,7 @@ a {
 	text-decoration: none;
 	color: white;
 	font-size: 200%;
+    margin-left: 8px;
 }
 #navbar ul li a:hover {color: #db0808; cursor: pointer; }
 
@@ -220,14 +221,13 @@ a {
 
 #footer {
   background-color: #343638;
-  height: 200px;
-  
-	
+  height: 100px;
 }
 #footer i {
-    margin: auto;
-    width: 50vw;
-    
+    float: left;
+    width: 25vw;
+    padding: 5px 5px;
+    margin: 0px auto 5px 5%;
 }
 
 
