@@ -225,10 +225,9 @@ a {
 	
 }
 #footer i {
-	text-align: center;
-    display: inline-block;
-	color: white;
-    margin-left: 5px;
+    margin: auto;
+    width: 50vw;
+    
 }
 
 
