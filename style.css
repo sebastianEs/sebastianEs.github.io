@@ -10,7 +10,7 @@ h1 {
 	font-size: 250%;
 	font-family: 'Lato';
 	font-weight: 300;
-	color: #ffffff;
+	color: #8e95a0;
 	position: relative;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
@@ -88,14 +88,21 @@ a {
 	display: inline;
 	color: white;
 	margin-right: 10px;
+    float: left;
 }
 #navbar ul li a {
 	text-decoration: none;
 	color: white;
 	font-size: 200%;
     margin-left: 8px;
+    padding: 10px;
 }
-#navbar ul li a:hover {color: #db0808; cursor: pointer; }
+#navbar ul li a:hover {
+    color: #4E9CAF;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 3px;
+}
 
 /*-----------------------HEAD SECTION ENDS--------------------------*/
 /*-----------------------MAIN SECTION BEGINS------------------------*/
@@ -129,8 +136,17 @@ a {
 }
 #content ul li a{
 	text-decoration: none;
-	color: #343638;
+	color: white;
 	font-size: 140%;
+    display: block;
+    width: 115px;
+    margin: auto;
+    height: 35px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #4E9CAF;
 }
 #content ul li a:hover {
 	color: #db0808;
@@ -238,12 +254,15 @@ a {
 }
 
 
-
+/*-------------------- media query----------------------*/
 @media screen and (max-width: 980px) {
 	
 	#pagewrap {
 		width: 94%;
 	}
+    .infocap {
+        overflow:visible;
+    }
 	#content {
 		width: 41%;
 		padding: 1% 4%;
@@ -300,6 +319,13 @@ a {
     }
     #navbar ul li a{
         font-size: 150%; 
+    }
+    #footer {
+        height: 350px;
+    }
+    #footer i {
+        float: none;
+        display: block;
     }
 
 }
