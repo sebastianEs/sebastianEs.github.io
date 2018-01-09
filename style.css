@@ -53,56 +53,7 @@ a {
 
 
 /*--------------------HEAD SECTION BEGINS---------------*/
-#header-container {
-	background-image: url('img/js_wallpaper.jpg');
-	background-repeat: no-repeat;
-	height: 100vh;
-	background-size: cover;
-    background-position: center;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
 
-#navbar {
-	width: 100%;
-	margin: 0;
-	position: absolute;
-	top: 5px;
-}
-#navbar ul {
-	list-style: none;
-	padding: 10px;
-	float: right;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-	background-color: #d4dbda;
-	width: 100%;
-}
-#navbar ul li {
-	display: inline;
-	color: white;
-	margin-right: 10px;
-    float: left;
-}
-#navbar ul li a {
-	text-decoration: none;
-	color: white;
-	font-size: 200%;
-    margin-left: 8px;
-    padding: 10px;
-}
-#navbar ul li a:hover {
-    color: #4E9CAF;
-    cursor: pointer;
-    background-color: black;
-    border-radius: 3px;
-}
 
 /*-----------------------HEAD SECTION ENDS--------------------------*/
 /*-----------------------MAIN SECTION BEGINS------------------------*/
