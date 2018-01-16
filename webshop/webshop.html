@@ -1,43 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>webshop</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="webshop.css">
+    <title>webshop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="webshop.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 </head>
+
 <body>
-    <div id="container">
-	 <h1>Välkommen till Webshoppen</h1>
-	 <h2>Skriv in valfri produkt</h2>
-	 <div class="inputContent">
-	  <input type="text" id="itemName" placeholder="Produkt namn"/>
-	  <input type="text" id="itemSort" placeholder="produkt sort"/>
-	  <input type="text" id="itemPrice" placeholder="Produkt pris"/>
-	 </div>
-	 <div class="userContent">
-	  <button id="addBtn">Lägg till Produkt</button>
-	  <button id="sortByName">Sortera efter namn</button>
-	  <button id="sortBySort">Sortera efter sort</button>
-	  <button id="sortByPrice">Sortera efter pris</button>
-	  <input type="text" id="objectList" placeHolder="Antal sökträffar">
-	  <table id="td"></table>
-	 </div>
-	</div>
-	
-	
-<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBDUTahARf3YIFH4pDWukmZw53cTSLgCm4",
-    authDomain: "webshop-ce2ac.firebaseapp.com",
-    databaseURL: "https://webshop-ce2ac.firebaseio.com",
-    storageBucket: "webshop-ce2ac.appspot.com",
-    messagingSenderId: "853776856918"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="webshop.js"></script>
+    <div class="container">
+        <div class="header row">
+            <div class="col-sm-12">
+                <h1>Webshoppen</h1>
+            </div>
+            <div class="col-sm-12">
+                <h2>Skriv in valfri produkt</h2>
+            </div>
+        </div>
+        
+           <form class="row">
+               <div class="form-group">
+                <input type="text" class="form-control col-sm-6" id="itemName" placeholder="Produkt namn" />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control col-sm-6" id="itemSort" placeholder="produkt sort" />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control col-sm-6" id="itemPrice" placeholder="Produkt pris" />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control col-sm-6" id="objectList" placeHolder="Antal sökträffar">
+            </div>
+
+            <div id="error" class="form-group">
+
+            </div>
+           </form>
+            
+
+        <form class="row">
+     
+            <div class="form-group">
+                <button id="addBtn" class="btn btn-primary">Lägg till Produkt</button>
+            </div>
+            <div class="form-group">
+                <button id="sortByName" class="btn btn-primary">Sortera efter namn</button>
+            </div>
+            <div class="form-group">
+                <button id="sortBySort" class="btn btn-primary">Sortera efter sort</button>
+            </div>
+            <div class="form-group">
+                <button id="sortByPrice" class="btn btn-primary">Sortera efter pris</button>
+            </div>
+
+            <div class="col-sm-12">
+                <table id="td"></table>
+            </div>
+
+   
+        </form>
+
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBDUTahARf3YIFH4pDWukmZw53cTSLgCm4",
+            authDomain: "webshop-ce2ac.firebaseapp.com",
+            databaseURL: "https://webshop-ce2ac.firebaseio.com",
+            storageBucket: "webshop-ce2ac.appspot.com",
+            messagingSenderId: "853776856918"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="webshop.js"></script>
 </body>
 </html>

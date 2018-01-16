@@ -1,53 +1,43 @@
+html {
+    padding: 0;
+    margin: 0;
+}
 body {
-   margin: 0;
-   padding: 0;
-   background-color: #dbcece;
-   font-size: 14px;
+    margin: 0;
+    padding: 0;
+    font-size: 16pt;
+    font-family: sans-serif;
 }
-h1, h2 {margin-left:15px;}
-#container {
-	border: 1px solid gray;
-	display: block;
-	width: 100vw;
-	background-color: white;
-	height: 80vh;
+
+#container {	
+    padding: 0;
+    margin: 0;
 }
-.inputContent {
-	border-bottom: 1px solid lightgray;
-	height: 40px;
+
+.header {
+    background: #011c68;
+    padding: 0;
+    margin: 0;
 }
-.userContent {
-	margin-top: 10px;
-	height: 20vh;
+
+.header h1, .header h2 {
+    color: greenyellow;
+    text-align: center;
+    font-size: 22pt;
 }
-input {
-	padding: 5px;
-	margin-left: 15px;
-	font-size: 130%;
+
+
+tr {
+    text-transform: uppercase;
 }
-button {
-	padding: 5px;
-	margin-top: 5px;
-	margin-left: 15px;
-	background-color: #7093ff;
-	border: 1px solid #7093ff;
-	font-size: 130%;
+
+#error span {
+    color: red;
+    text-transform: uppercase;
 }
-button:hover {
-	border: 1px solid black;
-}
-#td {
-   border: 1px solid lightgray;
-   width: 30vw;   
-   display: block;
-   margin-left: 15px;
-   overflow-y: scroll;
-   height: 100%;
-}
-td {
-	padding: 5px;
-	border: 1px solid lightgray;
-	width: 110px;
+
+.btn {
+    text-transform: uppercase;
 }
 
 

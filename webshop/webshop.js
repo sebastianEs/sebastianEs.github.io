@@ -1,6 +1,6 @@
 
 window.addEventListener('load', function() {
-	
+	let error = document.getElementById('error');
 	let iName = document.getElementById('itemName');
 	let iSort = document.getElementById('itemSort');
 	let iPrice = document.getElementById('itemPrice');
@@ -13,14 +13,21 @@ window.addEventListener('load', function() {
 	let db=firebase.database();
 	
 	addBtn.addEventListener('click', function(event) {
-		
-		db.ref('items/').push({
+		if(iName.value === "" || iSort.value === "" || iPrice.value === "") {
+            let span = document.createElement("span");
+            error.appendChild(span);
+            error.innerHTML =`<span class="form-control">Sorry empty field!</span>`;
+            
+        } else {
+           db.ref('items/').push({
 			name: iName.value,
 			sort: iSort.value,
 			price: Number(iPrice.value),
 			quantity: Number(quantList.value)
-		});
-	});
+		}); 
+    }
+		
+});
 		db.ref('items/').on('child_added', function(snapshot, prevChildKey) {
 	 
 	     let data = snapshot.val();
@@ -30,8 +37,8 @@ window.addEventListener('load', function() {
    function addToList(data) {
 	    if( table != null ) {
 		let tr=document.createElement('tr');
-		tr.innerHTML=`<td style="font-size:130%;">${data.name}</td> 
-		<td style="font-size:130%;">${data.sort}</td> <td style="font-size:130%;">${data.price}</td> ${'KR'}`;
+		tr.innerHTML=`<td>${data.name}</td> 
+		<td>${data.sort}</td> <td>${data.price}</td> ${'KR'}`;
 		table.appendChild(tr);
 		} else {
 			tr.innerHTML='';
@@ -71,6 +78,12 @@ window.addEventListener('load', function() {
 		
 	 });
 	
-	
+	/*function preventNullInput() {
+        if(iName === null || iSort === null || iPrice === null) {
+            console.log("YOU HAVE EMPTY FIELDS!");
+        } else {
+            console.log("new product added successfully!")
+        }
+    }*/
 	
 });
