@@ -1,0 +1,109 @@
+
+
+body {
+	margin: 0;
+	padding: 0;
+}
+canvas {
+	background-color: #ffdab3;
+	margin-top: 15px;
+	width: 840px;
+	height: 450px;
+}
+p {
+	font-size: 16px;
+	font-family: arial;
+}
+select {
+	padding: 12px;
+	width: 130px;
+	font-size: 18px;
+	background-color: black;
+	color: white;
+}
+button {
+	padding: 12px;
+	width: 110px;
+	background-color: black;
+	color: white;
+	margin: 0;
+	max-height: 45px;
+}
+button:hover {
+	background-color: orange;
+}
+input {
+	padding: 12px;
+	width: 110px;
+	font-size: 18px;
+	background-color: black;
+	color: white;
+}
+input:hover {
+	background-color: orange;
+}
+
+#statusBar, #statusBar1 {
+	border: 2px solid black;
+	background-color: #ffdab3;
+	color: black;
+	padding: 14px;
+	margin: 0;
+	width: 200px;
+	height: 30px;
+	font-size: 18px;
+	font-style: bold;
+}
+.content {
+	display: flex;	
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 850px;
+	background-color: beige;
+}
+.row {
+	flex-direction: row;
+
+}
+#JSON-div {
+	border: 2px solid black;
+	overflow: scroll;
+	font-size: 22px;
+	width: 840px;
+	height: 100px;
+    
+
+
+}
+
+/*    meny   */
+
+.dropdown {
+	display: flex;
+	
+}
+.dropdownContent {
+	display: none;
+	position: absolute;
+	
+}
+#menuBtn {
+  margin: 0;
+  font-size: 15px;
+  cursor: pointer; 
+  float: right;
+  width: 150px;
+}
+#delete {
+	padding: 14px;
+	float: right;
+}
+
+
+
+
+
+
+
+
+
