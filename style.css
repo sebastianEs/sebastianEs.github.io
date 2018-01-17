@@ -186,8 +186,8 @@ a {
 }
 .infocap img {
     border-radius: 5px;
-    max-height: 50px;
-    min-width: 50px;
+    max-height: 100px;
+    min-width: 100px;
     margin: auto;
 }
 .infocap a > img {
@@ -219,6 +219,7 @@ a {
 #about p {
 	padding-top: 20px;
     color: bisque;
+    font-weight: 700;
 }
 #about h3 {
     color: #ffffff;
@@ -244,21 +245,50 @@ a {
 }
 
 .footer-content {
-    
+    position: relative;
+    top: 120px;
 }
 #footer i {
     float: left;
     width: 25vw;
     padding: 5px 5px;
     margin: 0px auto 5px 5%;
+    color: black;
+}
+#footer p {
+    top: 130px;
+    position: relative;
+    text-align: center
 }
 
 
 /*-------------------- media query----------------------*/
 @media screen and (min-width: 800px) {
-	
+	.footer-content {
+    position: relative;
+    top: 190px;
+    }
+    #footer i {
+        float: left;
+        width: 25vw;
+        padding: 5px 5px;
+        margin: 0px auto 5px 5%;
+        color: black;
+    }
+    #footer p {
+        top: 195px;
+        position: relative;
+        text-align: center
+    }
 
-}
+
+        .infocap img {
+            min-width: 100px;
+            min-height: 100px;
+        }
+    }
+
+
 
 @media screen and (min-width: 600px) {
 
@@ -286,13 +316,27 @@ a {
     #navbar ul li a{
         font-size: 150%; 
     }
-    #footer {
-        height: 350px;
+    .footer-content {
+    position: relative;
+    top: 120px;
     }
     #footer i {
-        float: none;
-        display: block;
+        float: left;
+        width: 25vw;
+        padding: 5px 5px;
+        margin: 0px auto 5px 5%;
+        color: black;
+    }
+    #footer p {
+        top: 145px;
+        position: relative;
+        text-align: center
     }
 
-}
+
+        .infocap img {
+            min-width: 200px;
+            min-height: 200px;
+        }
+    }
 

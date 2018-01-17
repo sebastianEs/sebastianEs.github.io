@@ -140,6 +140,8 @@ window.onload = function () {
     pickBtn.addEventListener('click', function (event) {
 		
 		addBook();
+        bookTitle.innerHTML = "";
+        bookAuthor.innerHTML = "";
        
     });
 	

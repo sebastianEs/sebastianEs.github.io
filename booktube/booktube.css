@@ -3,8 +3,8 @@ body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;
 
 #container {
 	width: 100vw;
-	background-color: #ede6d3;
-	/*margin: 0px auto;*/
+    padding: 0px;
+    margin: 0px;
 }
 /*     HEADER SECTION      */
 
@@ -12,8 +12,10 @@ body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;
 #main-header {
 	height: 90px;
 	width: 100vw;
-	background-color: #ccc2a5;
+	background-color: #d4ff00;
 	border-radius: 5px;
+    margin: 0px;
+    position: absolute;
 }
 
 /*      NAVBAR SECTION      */
@@ -22,6 +24,8 @@ body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;
 #navbar {
 	width: 100vw;
 	margin: 0px;
+    position: relative;
+    top: 90px;
 }
 #navbar ul {
 	
@@ -62,33 +66,19 @@ body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;
 /*     MAIN SECTION         */
 
 
-.wrapper-image {
-	width: 100vw;
-	background-color: #ede6d3;
-	border-radius: 5px;
-	font-size: 110%;
-	height: 50vh;
-	margin-bottom: 0px;
-	border-radius: 50%;
-}
-
-
 .wrapper-main {
 	width: 80vw;
-	background-color: #ede6d3;
 	border-radius: 5px;
 	height: 100vh;
 	margin: auto;
-	
-	
+    top: 100px;
+	position: relative;
 }
 
 .view-books {
 	margin: 10px 0px 10px 0px;
 	height: 40%;
 	display: block;
-	/*border-bottom: 2px solid black;*/
-	overflow-y: scroll;
 }
 
 
@@ -112,7 +102,7 @@ body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;
 
 
 #footer {
-	background-color: #ccc2a5;
+	background-color: #0c0c09;
 	height: 60px;
 	width: 100vw;
 }
@@ -125,8 +115,9 @@ body {margin:0px; padding: 0px; font-family: georgia, verdana ; font-size: 14px;
 h1 {
 	font-size: 250%;
 	text-align: center;
-	color: #efece6;
+	color: black;
 	font-family: "century gothic";
+    font-weight: 600;
 	margin: 0px;
 	position: relative;
 	top: 50%;
@@ -139,4 +130,4 @@ h1 {
     margin-left: 15px;
 	
 }
-p {text-align: center;}
+p {text-align: center; color: white; position: relative; top: 45px}

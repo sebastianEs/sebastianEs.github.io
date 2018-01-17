@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Laboration canvas</title>
-<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="lab3.css">
+    <title>Laboration canvas</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="lab3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 </head>
+
 <body>
-<!-- ///////// navbar \\\\\\\\\ -->
-    <div class="content">
-    <div id="dropdownMenu">	
-	   	   
-	    <button id="menuBtn">Menu</button>
-		
-		<div id="dropdown" class="dropdownContent">
-		   <button id="clearBtn">Clear canvas</button>
-		   <button id="circleBtn">Draw circle</button>
-		   <button id="rectangleBtn">Draw rectangle</button>
-		   <button id="tringleBtn">Draw triangle</button>
-		   <button id="expoBtn">Export to JSON</button>
-		</div>
-    </div>
-<!-- ///////// main & canvas \\\\\\\\\\ -->
-	<main>	    	
-	  <div class="main content">      
- 
-		  
-		<p id="statusBar">Dubbelklicka på menu för fler alternativ:</p>
-	    <p id="statusBar1">canvas coordinates:</p>
-		<div id="JSON-div">JSON EXPORT</div>
-		
-		<canvas id="canvas" width="840" height="450"></canvas>
-	    <div class="row">	
-	                    <input type="submit" value="add color" pattern="[7]" id="submitColor"/>						
-						<input id="hex-color" type="text" value="#" maxlength="7"/>
-		    		    <select id="selectColor">
+    <!-- ///////// navbar \\\\\\\\\ -->
+    <div class="container">
+        <ul>
+          <li><button id="export">Export</button></li>
+          <li><button id="delete">Delete</button></li>
+          <li><input type="submit" value="add color" pattern="[7]" id="submitColor" /></li>
+          <li><input id="hex-color" type="text" value="#" maxlength="7" /></li>
+          <li class="dropdown">
+            <a class="dropbtn" id="menuBtn">Options</a>
+            <div class="dropdown-content">
+              <button id="circleBtn">Rectangle</button>
+              <button id="rectangleBtn">Circle</button>
+              <button id="tringleBtn">Triangle</button>
+              <button id="clearBtn">Clear</button>
+              <select id="selectColor">
 						    <option selected value="none">pick color</option>
 						    <option value="#000000">black</option>
 						    <option value="#0000ff">blue</option>
@@ -42,14 +32,26 @@
 						    <option value="#ffff00">yellow</option>
 						    <option value="#00FF00">green</option>
 						</select>
-						
-	    
-	    <button id="delete">Cancel Drawing</button>		
-		</div>
-     </div>
-	</main>  
-	
+            </div>
+            
+          </li>
+        </ul>
+
+
+        <!-- ///////// main & canvas \\\\\\\\\\ -->
+        <main>
+            <div class="main-content">
+
+
+                <p id="statusBar">Dubbelklicka på menu för fler alternativ:</p>
+                <p id="statusBar1">canvas coordinates:</p>
+                <div id="JSON-div">JSON EXPORT</div>
+                <canvas id="canvas" width="840" height="450"></canvas>              
+
+            </div>
+        </main>
+
     </div>
-<script src="skript.js"></script>
+    <script src="skript.js"></script>
 </body>
 </html>
