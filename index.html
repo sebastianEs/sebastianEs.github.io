@@ -15,21 +15,37 @@
 
 
     <div id="container">
-        <div id="myTopnav" class="navbar">
-            <div class="toggle">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </div>
-            <a class="active" href="#">home</a>
-            <a href="#about">About</a>
-            <a href="#content">Work</a>
-            <a href="#footer">Contact</a>
+          <nav class="navbar">
+        <span class="open-slide">
+      <a href="#" onclick="openSlideMenu()">
+        <svg width="30" height="30">
+            <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+            <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+            <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+        </svg>
+      </a>
+    </span>
 
-        </div>
+    <ul class="navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#content">work</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="side-menu" class="side-nav">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">work</a>
+    <a href="#">Contact</a>
+  </div>
 
 
 
 
-        <div id="mainwrapper">
+        <div id="main">
 
             <section id="about">
                 <h3>Hi my name is Sebastian</h3>
@@ -146,8 +162,17 @@
         </div>
     </div>
 
+    <script>
+    function openSlideMenu(){
+      document.getElementById('side-menu').style.width = '250px';
+      document.getElementById('main').style.marginLeft = '250px';
+    }
 
+    function closeSlideMenu(){
+      document.getElementById('side-menu').style.width = '0';
+      document.getElementById('main').style.marginLeft = '0';
+    }
+  </script>
 
 </body>
-
 </html>
