@@ -63,38 +63,14 @@ a {
     background-color: #ddd;
     color: black;
 }
-
-.active {
-    background-color: black;
-    color: white;
+.toggle {
+    width: 100%;
+    padding: 10px 20px;
+    background: #3f4144;
+    
 }
 
-.navbar .icon {
-    display: none;
-}
 
-@media screen and (max-width: 600px) {
-  .navbar a:not(:first-child) {display: none;}
-  .navbar a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .navbar.responsive {position: relative;}
-  .navbar.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .navbar.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-}
 /*-----------------------HEAD SECTION ENDS--------------------------*/
 /*-----------------------MAIN SECTION BEGINS------------------------*/
 
