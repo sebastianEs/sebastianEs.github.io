@@ -18,8 +18,10 @@ class App extends React.Component {
     
         return <div className="result">
             <h1>React Application</h1>
+            <p>please enter your name</p>
+            <span className="text">{this.state.text}</span>
             <input onChange={this.changeText} placeholder="Your name" />
-            <span>{this.state.text}</span>
+            
             </div>
     }
 }
@@ -51,9 +53,12 @@ class Numbers extends React.Component {
     render() {
         return (
         <div className="numbers">
-            <span>Calculate numbers</span>
-            <GetResult handleKeyUp={this.handleKeyUp1} count={this.state.result1 * this.state.result2} />
-            <GetResult handleKeyUp={this.handleKeyUp2} count={this.state.result2 * this.state.result1} />
+            <h1>Calculate numbers</h1>
+            <p>Type any number in the input fields</p>
+            <div className="inptWrapper">
+            <GetResult handleKeyUp={this.handleKeyUp1} placeholder="firstnumber" count={this.state.result1 * this.state.result2} />
+            <GetResult handleKeyUp={this.handleKeyUp2} placeholder="secondnumber" count={this.state.result2 * this.state.result1} />
+            </div>
         </div>
         );
     }
@@ -63,7 +68,7 @@ class Numbers extends React.Component {
 function GetResult(props) {
     return <div>
         
-        <input type="text" onKeyUp={props.handleKeyUp} placeholder="Type any number"></input>
+        <input type="text" onKeyUp={props.handleKeyUp}></input>
         <span>{props.count}</span>
     </div>;
     
@@ -112,6 +117,7 @@ class ClickBtn extends React.Component {
     render() {
         return (
             <div className="buttonDiv">
+            <p>click button to change color</p>
             <button onClick={this.handleFirstBtn} className={this.state.className}>First button</button>
             <button onClick={this.handleSecondBtn} className={this.state.className2} >Second button</button>
             <br/>

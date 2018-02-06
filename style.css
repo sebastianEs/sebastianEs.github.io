@@ -38,7 +38,7 @@ a {
 }
 
 .container {
-    padding: 0;
+    padding: 0px;
     margin: 0px;
 }
 /*--------------------HEAD SECTION BEGINS---------------*/
@@ -137,7 +137,8 @@ body{
     background-color: #3f4144;
 }
 #content {
-	
+	width: 70%;
+    margin: auto;
 }
 #content ul {
 	margin-top: 5px;
@@ -235,24 +236,27 @@ body{
 
 #footer {
   background-color: #efa700;
-  height: 200px;
+  height: 300px;
 }
 
 .footer-content {
     position: relative;
     top: 120px;
+    width: 50%;
 }
 #footer i {
     float: left;
-    width: 25vw;
+    width: 20vw;
     padding: 5px 5px;
     margin: 0px auto 5px 5%;
     color: black;
 }
 #footer p {
-    top: 130px;
+    bottom: 30px;
     position: relative;
-    text-align: center
+    text-align: center;
+    font-size: 1rem;
+
 }
 
 
