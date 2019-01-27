@@ -4,15 +4,17 @@
 }
 
 body{
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
-    color: #955925;
     line-height: 1.6;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 18px;
 }
 /* landing page */
 #showcase{
-    background-color: steelblue;
+    background-color: #495475;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,6 +33,7 @@ body{
 #showcase p {
     font-size: 20px;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 #showcase .button-wrapper {
@@ -41,13 +44,13 @@ body{
     font-size: 18;
     text-decoration: none;
     color: #fff;
-    border: #955925 1px solid;
+    border: #fff 1px solid;
     padding: 10px 20px;
     border-radius: 10px;
 }
 
 #showcase .button:hover{
-    color: #955925;
+    color: #495475;
     background-color: #fff;
 }
 /* about section */
@@ -72,13 +75,21 @@ body{
 
 /* portfolio section */
 
+#portfolio-section {
+    background-color: #4caa59;
+    width: 0 auto;
+}
+
 #portfolio-section .card {
-    background-color: steelblue;
-    border: #955925 1px solid;
     padding: 50px 50px;
     text-align: center;
-    width: 500px;
     margin: 20 0px;
+}
+
+#portfolio-section .card p {
+    margin: 10px 0px;
+    color: #16140d;
+    font-size: 16px;
 }
 
 #portfolio-section h2 {
@@ -101,6 +112,7 @@ body{
 #footer p {
     margin-top: 20px;
     font-size: 18px;
+    color: #fff;
 }
 
 #footer .linkedin {
@@ -118,3 +130,18 @@ body{
     margin-left: 2px;
     margin-right: 2px;
 }
+
+
+@media only screen and (min-width: 600px) {
+    h1 {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 14px;
+
+    }
+}
+
