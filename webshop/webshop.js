@@ -9,11 +9,11 @@ window.addEventListener('load', function() {
     let sortByPrice=document.getElementById('sortByPrice');
 	let sortBySort=document.getElementById('sortBySort');
 	let quantList=document.getElementById('objectList');
-	let table=document.getElementById('td');
+	let table=document.getElementById('table');
 	let db=firebase.database();
 	
 	addBtn.addEventListener('click', function(event) {
-		if(iName.value === "" || iSort.value === "" || iPrice.value === "") {
+		if(!iName.value || !iSort.value || !iPrice.value) {
             let span = document.createElement("span");
             error.appendChild(span);
             error.innerHTML =`<span class="form-control">Sorry empty field!</span>`;
@@ -42,23 +42,24 @@ window.addEventListener('load', function() {
 		table.appendChild(tr);
 		} else {
 			tr.innerHTML='';
-			console.log("objekten skrivs bara ut 1 gång")
 		}
 	}
    //    function som sorterar alla produkter
     function sortData(sortBtn,sortItems) {
+		console.log(sortBtn,sortItems)
 		sortBtn.addEventListener('click', function(event) {
 		table.innerHTML='';
 		db.ref('items/').orderByChild(sortItems).once
 		('value', function(snapshot) {
+			console.log('orderbychild', snapshot);
 			snapshot.forEach( itemsRef => {addToList(itemsRef.val());
 			})
 		});
 	  });
 	}
 	sortData(sortByName,"name"); 
-	sortData(sortByPrice,"price");
 	sortData(sortBySort,"sort");
+	sortData(sortByPrice,"price");
 	sortData(quantList,"quantity");
 	//    event som lägger till antal objekt som ska visas
 	quantList.addEventListener('blur', function(event) {
@@ -69,6 +70,7 @@ window.addEventListener('load', function() {
 			console.log("No number");
 			
 		} else {
+			console.log(num);
 			db.ref('items/').limitToLast(num).once('value', function(snapshot) {
 				snapshot.forEach( itemsRef => {addToList(itemsRef.val());
 				});
