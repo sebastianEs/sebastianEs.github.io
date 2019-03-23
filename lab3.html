@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Laboration canvas</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="lab3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu-wrapper">
+            <h1>Play with figures</h1>
+            <div class="status-wrapper"> 
+                    <p id="statusBar"></p>
+                    <p id="statusBar1">canvas coordinates:</p>
+                </div>     
+            <ul class="list">
+                <li id="clearBtn" ><span>Clear</span></li>
+                <li id="circleBtn" ><span>Circle</span></li>
+                <li id="rectangleBtn" ><span>Rectangle</span></li>
+                <li id="tringleBtn" ><span>Triangle</span></li>
+            </li>
+            </ul>
+            <div class="color-input-wrapper">
+                <input id="hex-color" placeholder="type hex color" type="text" value="#" maxlength="7" />
+                <input type="submit" value="add color" pattern="[7]" class="submitButton" id="submitColor" />
+                <select id="selectColor">
+                        <option selected value="none">pick color</option>
+                        <option value="#000000">black</option>
+                        <option value="#0000ff">blue</option>
+                        <option value="#ff0000">red</option>
+                        <option value="#ffff00">yellow</option>
+                        <option value="#00FF00">green</option>
+                </select>
+            </div>  
+        </div>
+        <div class="main-content">
+            <canvas id="canvas"></canvas>    
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
