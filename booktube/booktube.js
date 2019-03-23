@@ -1,3 +1,4 @@
+
 let pickBtn = document.getElementsByClassName('pick-btn')[0]
     , apiBtn = document.getElementById('api-btn')
     , data = document.getElementById('returnKey')
@@ -132,13 +133,9 @@ let addMoreBooks = function() {
 /*''''''''''''''' KLICK EVENTS ''''''''''''''*/
 window.onload = function () {
     apiBtn.addEventListener('click', function (event) {
-        
-	   
-		getRequestKey();
-		
+		getRequestKey();		
     });
-    pickBtn.addEventListener('click', function (event) {
-		
+    pickBtn.addEventListener('click', function (event) {	
 		addBook();
         bookTitle.innerHTML = "";
         bookAuthor.innerHTML = "";
