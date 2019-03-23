@@ -8,6 +8,23 @@
     100% { -webkit-transform: translateY(0.4em); opacity: 0.9 }
 }
 
+.section-header {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 .arrow {
     border-color:transparent;
     border-style:solid;
@@ -28,7 +45,7 @@
 
 ul.tech-list {
     list-style: none;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 ul.tech-list li {
@@ -58,7 +75,7 @@ h1 {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     padding: 0 20px;
@@ -66,13 +83,14 @@ h1 {
 }
 
 #showcase h1 {
-    font-size: 50px;
+    margin-top: 100px;   
+    font-size: 40px;
     line-height: 1.2;
+    color: #fff;
 }
 
 #showcase p {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 30px;
     color: #fff;
 }
 
@@ -116,24 +134,26 @@ h1 {
 /* portfolio section */
 
 #portfolio-section {
-    background-color: #4caa59;
+    margin-top: 50px;
     width: 0 auto;
+    background-color: darkgrey; 
 }
 
 #portfolio-section .card {
     padding: 50px 50px;
-    text-align: center;
-    margin: 20 0px;
+    margin: 20px;   
+    width: 500px;
+    height: auto;
+    border: 1px solid lightgray;
 }
 
 #portfolio-section .card p {
-    margin: 10px 0px;
+    margin: 20px;
     color: #16140d;
     font-size: 16px;
 }
 
 #portfolio-section h2 {
-    margin-bottom: 10px;
     color: #fff;
 }
 
