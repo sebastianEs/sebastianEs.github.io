@@ -1,91 +1,64 @@
 
-window.addEventListener('load', function() {
 	let error = document.getElementById('error');
 	let iName = document.getElementById('itemName');
 	let iSort = document.getElementById('itemSort');
 	let iPrice = document.getElementById('itemPrice');
 	let addBtn = document.getElementById('addBtn');
 	let sortByName=document.getElementById('sortByName');
-    let sortByPrice=document.getElementById('sortByPrice');
+	let sortByPrice=document.getElementById('sortByPrice');
 	let sortBySort=document.getElementById('sortBySort');
 	let quantList=document.getElementById('objectList');
 	let table=document.getElementById('table');
 	let db=firebase.database();
+	let ref = db.ref("/items");
 	
-	addBtn.addEventListener('click', function(event) {
-		if(!iName.value || !iSort.value || !iPrice.value) {
-            let span = document.createElement("span");
-            error.appendChild(span);
-            error.innerHTML =`<span class="form-control">Sorry empty field!</span>`;
-            
-        } else {
-           db.ref('items/').push({
-			name: iName.value,
-			sort: iSort.value,
-			price: Number(iPrice.value),
-			quantity: Number(quantList.value)
-		}); 
-    }
-		
-});
-		db.ref('items/').on('child_added', function(snapshot, prevChildKey) {
-	 
-	     let data = snapshot.val();
-	     addToList(data);
-});
-   //    function som lägger till produkter
-   function addToList(data) {
-	    if( table != null ) {
-		let tr=document.createElement('tr');
+
+	function handleAddEvent() {
+			if(!iName.value || !iSort.value || !iPrice.value) {
+				let span = document.createElement("span");
+				error.appendChild(span);
+				error.innerHTML =`<h2>Sorry empty field!</h2>`;
+				
+			} else {
+				ref.push({
+				name: iName.value,
+				sort: iSort.value,
+				price: Number(iPrice.value),
+				quantity: Number(quantList.value)
+			}); 
+		}
+	}
+
+	function orderByChild(child) {
+		ref.orderByChild(child).on('value', snapshot => {
+			snapshot.forEach((item) => {
+				console.log(item.val())
+			});
+		});
+	}
+
+	function addToList(data) {
+	    if(ref) {
+		let tr = document.createElement('tr');
 		tr.innerHTML=`<td>${data.name}</td> 
-		<td>${data.sort}</td> <td>${data.price}</td> ${'KR'}`;
+		<td>${data.sort}</td> <td>${data.price}</td> <td>${'KR'}</td>`;
 		table.appendChild(tr);
 		} else {
 			tr.innerHTML='';
 		}
 	}
-   //    function som sorterar alla produkter
-    function sortData(sortBtn,sortItems) {
-		console.log(sortBtn,sortItems)
-		sortBtn.addEventListener('click', function(event) {
-		table.innerHTML='';
-		db.ref('items/').orderByChild(sortItems).once
-		('value', function(snapshot) {
-			console.log('orderbychild', snapshot);
+
+	function showListOfItems(items) {
+		if(!items) return;
+		ref.on('value', function(snapshot) {
 			snapshot.forEach( itemsRef => {addToList(itemsRef.val());
-			})
+			});
 		});
-	  });
 	}
-	sortData(sortByName,"name"); 
-	sortData(sortBySort,"sort");
-	sortData(sortByPrice,"price");
-	sortData(quantList,"quantity");
-	//    event som lägger till antal objekt som ska visas
-	quantList.addEventListener('blur', function(event) {
-		let num =Number(quantList.value);
-		table.innerHTML='';
-		
-		if( isNaN(num) ) {
-			console.log("No number");
-			
-		} else {
-			console.log(num);
-			db.ref('items/').limitToLast(num).once('value', function(snapshot) {
-				snapshot.forEach( itemsRef => {addToList(itemsRef.val());
-				});
-			})
-		
-		}
-		
-	 });
-	
-	/*function preventNullInput() {
-        if(iName === null || iSort === null || iPrice === null) {
-            console.log("YOU HAVE EMPTY FIELDS!");
-        } else {
-            console.log("new product added successfully!")
-        }
-    }*/
-	
-});
+
+
+/*''''''''''''''' KLICK EVENTS ''''''''''''''*/
+window.onload = function () {
+	addBtn.addEventListener('click', handleAddEvent);
+	quantList.addEventListener('mouseover', showListOfItems(ref));
+};

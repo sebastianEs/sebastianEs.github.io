@@ -14,24 +14,36 @@
             <div class="col-sm-12 col-md-12 ">
                 <div class="form-wrapper">
                     <h1>Shopping List</h1>
-                    <h2>use form to add new products</h2>
                     <input type="text" class="form-control" id="itemName" placeholder="Product name" />
-                    <input type="text" class="form-control" id="itemSort" placeholder="Sort" />
+                    <input type="text" class="form-control" id="itemSort" placeholder="Type" />
                     <input type="text" class="form-control" id="itemPrice" placeholder="Price" />
-                    <input type="text" class="form-control" id="objectList" placeHolder="search hits">
-                    <div id="error">
-                    </div>
+                    <input type="text" class="form-control" id="objectList" placeHolder="search hits"> 
                 </div>
+                <div id="error"></div>
             </div>
         </form>
         <form class="row">
             <div class="col-sm-12 col-md-12">
                 <div class="list-wrapper"> 
-                    <button id="addBtn" class="btn btn-primary">Add to list</button>
-                    <button id="sortByName" class="btn btn-primary">Sort by name</button>
+                    <button id="addBtn" class="btn btn-success">Add to list</button>
+                    <!--<button id="sortByName" class="btn btn-primary">Sort by name</button>
                     <button id="sortBySort" class="btn btn-primary">Sort by type</button>
-                    <button id="sortByPrice" class="btn btn-primary">Sort by price</button>
-                    <table id="table"></table>
+                    <button id="sortByPrice" class="btn btn-primary">Sort by price</button>-->
+                    <table id="table">
+                            <thead>
+                                    <tr>
+                                        <th colspan="2">Your products</th>
+                                    </tr>
+                                    <tbody>
+                                            <tr>
+                                                <td>name</td>
+                                                <td>type</td>
+                                                <td>price</td>
+                                                <td>currency</td>
+                                            </tr>
+                                    </tbody>
+                                </thead>
+                    </table>
                 </div>
             </div>
         </form>
