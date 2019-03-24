@@ -62,7 +62,14 @@ img {
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+    max-width:1280px;
+    margin:0 auto;
+}
+
+#container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 h1 {
@@ -73,12 +80,10 @@ h1 {
 #showcase{
     background-color: #495475;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 20px;
     margin-bottom: 20px;
 }
 
@@ -94,8 +99,16 @@ h1 {
     color: #fff;
 }
 
-#showcase .button-wrapper {
-    flex-direction: row;
+.button-wrapper {
+    width: 50%;
+    height: 100px;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+.button-wrapper a {
+    display: inline-block;
+    margin-top: 10px;
 }
 
 #showcase .button, #portfolio-section .button {
@@ -124,6 +137,12 @@ h1 {
 #info-section h1, #portfolio-section h1 {
     font-size: 50px;
     line-height: 1.2;
+    margin: 30px 0px;
+    
+}
+
+#portfolio-section h1 {
+    color: #fff;
 }
 
 #info-section p {
@@ -134,8 +153,6 @@ h1 {
 /* portfolio section */
 
 #portfolio-section {
-    margin-top: 50px;
-    width: 0 auto;
     background-color: darkgrey; 
 }
 
@@ -144,12 +161,13 @@ h1 {
     margin: 20px;   
     width: 500px;
     height: auto;
-    border: 1px solid lightgray;
+    border: 2px solid lightgray;
+    border-radius: 10px;
 }
 
 #portfolio-section .card p {
     margin: 20px;
-    color: #16140d;
+    color: #fff;
     font-size: 16px;
 }
 
@@ -160,11 +178,8 @@ h1 {
 /* footer */
 
 #footer {
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 300px;
+    width: 100%;
     text-align: center;
     background-color: #16140d;
 }
@@ -173,6 +188,10 @@ h1 {
     margin-top: 20px;
     font-size: 18px;
     color: #fff;
+}
+
+.social a {
+    margin: 0 10px; 
 }
 
 #footer .linkedin {
@@ -192,16 +211,24 @@ h1 {
 }
 
 
-@media only screen and (min-width: 600px) {
-    h1 {
-        font-size: 16px;
+@media screen and (max-width: 600px) {
+    #container {
+        float: left;
+        width: 100%;
     }
-}
 
-@media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 14px;
-
+    #footer .social {
+        margin-top: 100px;  
     }
+
+    #portfolio-section .card {
+        width: 50%;
+    }
+
+    #portfolio-section .card p {
+        line-height: 1.6;   
+    }
+
+
 }
 
