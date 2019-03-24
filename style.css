@@ -136,7 +136,7 @@ h1 {
 
 #info-section h1, #portfolio-section h1 {
     font-size: 50px;
-    line-height: 1.2;
+    line-height: 1.4;
     margin: 30px 0px;
     
 }
@@ -175,6 +175,11 @@ h1 {
     color: #fff;
 }
 
+
+#portfolio-section .card p {
+    line-height: 1.6;   
+}
+
 /* footer */
 
 #footer {
@@ -210,6 +215,10 @@ h1 {
     margin-right: 2px;
 }
 
+#footer .social {
+    margin-top: 100px;  
+}
+
 
 @media screen and (max-width: 600px) {
     #container {
@@ -217,16 +226,8 @@ h1 {
         width: 100%;
     }
 
-    #footer .social {
-        margin-top: 100px;  
-    }
-
     #portfolio-section .card {
         width: 50%;
-    }
-
-    #portfolio-section .card p {
-        line-height: 1.6;   
     }
 
 
