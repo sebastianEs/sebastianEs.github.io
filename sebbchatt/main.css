@@ -1,45 +1,32 @@
 body {
-   display: block;
    margin: 0px;
    padding: 0px;
-   font-size: 14px;
    font-family: georgian sans-serif verdana;
-   background-color: #151c28;
+   background-color: #3d6bbc;
 }
 #container {
 	height: 100vh;
-    padding: 0;
-    margin: 0;
+	width: 50%;
+    margin: 0 auto;
 }
 #logginSection {
-	border: 1px solid white;
-	height: 30vh;
-	display: block;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 #inputWords {
-	margin-left: 5px;
 	margin-top: 25px;
 }
-#logout-btn {
-	padding: 5px;
-	display: inline;
-	margin-top: 7px;
-	width: 90px;
-	background-color: #151c28;
-	color: white;
-	
-}
-#login-btn:hover, #logout-btn:hover {
-	background-color: white;
+
+#login-btn:hover {
+	background-color: #3d6bbc;
 	color: #151c28;
     cursor: pointer;
 }
 
-#post-button, #logout-btn {
+#post-button, {
     text-transform: uppercase;
 }
 #inputdata {
@@ -49,11 +36,10 @@ body {
    width: 100%;
 }
 #post-button {
-	padding: 5px;
-	display: inline;
-	margin-top: 7px;
+	padding: 12px;
+	margin-top: 5px;
 	width: 90px;
-	background-color: #151c28;
+	background-color: #3d6bbc;
 	color: white;
 }
 #post-button:hover {
@@ -62,7 +48,6 @@ body {
     cursor: pointer;
 }
 #mymessage {
-	border-bottom: 1px solid black;
 	height: 100vh;
 	color: white;
 	width: 90%;
@@ -70,30 +55,21 @@ body {
 }
 #describetext {
 	margin-top: 20px;
-	margin-right: 10px;
-	margin-left: 20px;
-	width: 40%;
 }
-.outputText {
-	border-bottom: 1px solid gray;
-	
+#outputText {
+	height: auto;
+	width: 100%;
 }
 input {
-	display: inline;
-	padding: 5px;
-	margin-top: 5px;
+	padding: 10px;
 }
 h2 {
 	font-size: 18px;
 	color: white;
+	text-align: left;	
+	margin-left: 40px;
 }
-h1 {
-	text-align: center;
-	color: white;
-	margin-top: 50px;
-    font-size: 20px;
-    font-weight: 700;
-}
+
 li {
 	list-style: none;
 }

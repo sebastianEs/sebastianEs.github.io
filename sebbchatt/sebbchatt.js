@@ -1,17 +1,10 @@
 
 window.addEventListener('load', function() {
     
-
-   
-
-    let logInBtn = document.getElementById('login-btn');
-	let logOutBtn = document.getElementById('logout-btn');
-
      let uword = document.getElementById('inputWords'),
      udescribe = document.getElementById('describetext'),
      postBtn = document.getElementById('post-button');
 	 
-	 let h1 = document.getElementById('h');
 	 
 	postBtn.addEventListener('click', function(event) {
 		 let name = uword.value;
@@ -21,7 +14,6 @@ window.addEventListener('load', function() {
 	       sendMessage();	
 	    h1.innerHTML="";
 		 } else {
-			  h1.innerHTML="You have to create username to chatt.";
 		 }
 	 });
 	 udescribe.addEventListener('keypress', function(event) {
@@ -32,7 +24,6 @@ window.addEventListener('load', function() {
 		  sendMessage(); 
 		 } else {
 			 
-			 h1.innerHTML="Missing input";
 		 }
 	 });
 	
@@ -61,11 +52,6 @@ window.addEventListener('load', function() {
 			 time: currentTime,
 			 name: name,
 		 });
-		 
-		
-		  
-		 let outputText = document.getElementById('outputText');
-		 
 		
 		
 		
@@ -100,8 +86,7 @@ window.addEventListener('load', function() {
 					let li =document.createElement('li');
 					li.innerHTML=textArr[i];
 					outputText.appendChild(li);
-					li.style.borderBottom="1px solid gray";
-				
+					li.style.borderBottom="1px solid gray";		
 				
 			}
 			
@@ -113,23 +98,7 @@ window.addEventListener('load', function() {
 		 let saveName = uword.value;
 		 localStorage.setItem('key',saveName);
 		 let val = localStorage.getItem('key');
-		 h1.innerHTML="Let's chatt";
 		 
 	 });
-	 
-	 //     event som tar bort aktuell användare
-	 logOutBtn.addEventListener('click', function(e) {
-		 if( uword.value != "" ) {
-		localStorage.removeItem('key');
-        uword.innerHTML ="";
-		h1.innerHTML="Username is logged out";
-       	} else {
-			h1.innerHTML="user is logged in";
-			uword.innerHTML="";
-		}
-	 });
-	 
-	 
-	    
 		
 });
