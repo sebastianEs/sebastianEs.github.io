@@ -17,14 +17,14 @@ window.addEventListener('load', function() {
 	}
 
 	});
-	udescribe.addEventListener('keypress', function(event) {
+	/*udescribe.addEventListener('keypress', function(event) {
 		let name = uword.value;
 		let msg = udescribe.value;
 		if( event.keyCode == '13' && name != '' && msg != '' ) {
 			outputText.innerHTML='';
 			sendMessage(); 
 		}
-	});
+	});*/
 
 	function getTime() {
 		let today = new Date();
