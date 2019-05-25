@@ -1,75 +1,47 @@
 body {
-   margin: 0px;
-   padding: 0px;
-   font-family: georgian sans-serif verdana;
-   background-color: #3d6bbc;
-}
-#container {
-	height: 100vh;
-	width: 50%;
-    margin: 0 auto;
-}
-#logginSection {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	padding: 0px;
+	margin: 0px;
 }
 
-#inputWords {
-	margin-top: 25px;
+form {
+	padding-top: 50px;
 }
 
-#login-btn:hover {
-	background-color: #3d6bbc;
-	color: #151c28;
-    cursor: pointer;
+ul {
+	list-style-type: none;
 }
 
-#post-button, {
-    text-transform: uppercase;
+ul li {
+	padding: 5px;
 }
-#inputdata {
-   display: block;
-   height: 20vh;
-   border-bottom: 2px solid white;
-   width: 100%;
-}
-#post-button {
-	padding: 12px;
-	margin-top: 5px;
-	width: 90px;
-	background-color: #3d6bbc;
-	color: white;
-}
-#post-button:hover {
-	background-color: white;
-	color: #151c28;
-    cursor: pointer;
-}
-#mymessage {
-	height: 100vh;
-	color: white;
-	width: 90%;
-	margin: auto;
-}
-#describetext {
-	margin-top: 20px;
-}
-#outputText {
-	height: auto;
-	width: 100%;
-}
-input {
-	padding: 10px;
-}
-h2 {
+
+h2.message {
+	color: #0cd13a;
+	font-weight: bold;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	font-size: 18px;
-	color: white;
-	text-align: left;	
-	margin-left: 40px;
 }
 
-li {
-	list-style: none;
+.body-panel
+{
+    overflow-y: scroll;
+    height: 250px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
 }
