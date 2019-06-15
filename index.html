@@ -3,83 +3,112 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="port" content="width=device-width, initial-scale=1.0">
+    <meta name="port" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Sebastians | Portfolio</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/brands.css" integrity="sha384-QT2Z8ljl3UupqMtQNmPyhSPO/d5qbrzWmFxJqmY7tqoTuT2YrQLEqzvVOP2cT5XW" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css" integrity="sha384-u5J7JghGz0qUrmEsWzBQkfvc8nK3fUT7DCaQzNQ+q4oEXhGSx+P2OqjWsfIRB8QT" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="style.css">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    
+
 </head>
 
 <body>
-    <div id="container" >
-        <header id="showcase">
-            <h1 class="section-header">Hello, I'm Sebastian!</h1>
-            <br/>
-            <p>Front-End Developer</p>
-            <div class="button-wrapper">
-            <a href="#info-section" class="button" >About Me</a>
-            <a href="#portfolio-section" class="button">Work</a>
+    <div id="container">
+        <header id="showcase" class="row">
+            <div class="col" >
+                <h1 class="section-header">Hello, I'm Sebastian!</h1>
+                <br/>
+                <p>Front-End Developer</p>
+                <div class="button-wrapper">
+                <a href="#info-section" class="button">About Me</a>
+                <a href="#portfolio-section" class="button">Work</a>
+                </div>
+                <a href="#info-section" class="arrow down">Down</a>
             </div>
-            <a href="#info-section" class="arrow down">Down</a>
         </header>
-        <section id="info-section">
-            <h1 class="section-header">About me</h1>
-            <div class="infoTextWrapper">
-                <p>I had been working at a foodstock for quite some time before i desided make a switch to become a Front-End Developer. I wish that i would have made the switch much earlier because now i truly love developing.
-                </p>
-                <br/>
-                <p>I am highly motivated about learning and becomming a self driven developer, fast learner and wants to pick up new technologies and bring a lot of value to my work place.</p>
-                <br/>
-                <p>Here are some of the technical skills i master:</p>
-                <ul class="tech-list">
-                    <li><a href="https://en.wikipedia.org/wiki/React_(JavaScript_library)"><img src="./img/react-native.png" title="react-native" alt="react"/></a></li>
-                    <li><a href="https://sv.wikipedia.org/wiki/Javascript"/><img src="./img/javascript.png" title="javascript" alt="javascript" /></a></li>
-                    <li><a href="https://sv.wikipedia.org/wiki/HTML"/><img src="./img/html.png" title="HTML" alt="HTMl" /></a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets#CSS_3"/><img src="./img/css.png" title="CSS" alt="CSS" /></a></li>
-                </ul>
+        <section id="info-section" class="row">
+            <div class="container">
+                <h1 class="section-header">About me</h1>
+                <div class="infoTextWrapper">
+                    <p>I had been working at a foodstock for quite some time before i desided make a switch to become a Front-End Developer. I wish that i would have made the switch much earlier because now i truly love developing.
+                    </p>
+                    <br/>
+                    <p>I am highly motivated about learning and becomming a self driven developer, fast learner and wants to pick up new technologies and bring a lot of value to my work place.</p>
+                    <br/>
+                    <p>Here are some of the technical skills i master:</p>
+                    <ul class="tech-list">
+                        <li><a href="https://en.wikipedia.org/wiki/React_(JavaScript_library)"><img src="./img/react-native.png" title="react" alt="react"/></a></li>
+                        <li><a href="https://sv.wikipedia.org/wiki/Javascript"/><img src="./img/javascript.png" title="javascript" alt="javascript" /></a></li>
+                        <li><a href="https://sv.wikipedia.org/wiki/HTML"/><img src="./img/html.png" title="HTML" alt="HTMl" /></a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets#CSS_3"/><img src="./img/css.png" title="CSS" alt="CSS" /></a></li>
+                    </ul>
+                </div>
             </div>
         </section>
-        <section id="portfolio-section">
-            <h1 class="section-header">My Work</h1>
-            <div class="card">
-                <h2>React Redux Shop</h2>
-                <p>This was a task i had where the goal was to create a webshop that included React JS and Redux. This was also one of the first create-react-apps i did when studying front end.</p>
-                <a href="https://sebastianes.github.io/react-redux-shop/" class="button">VIEW</a>
-            </div>
-            <div class="card">
-                <h2>Webb application live chatt</h2>
-                <p>This is a very simple live chatt, created with some Javascript and firebase.</p>
-                <a href="https://sebastianes.github.io/sebbchatt/sebbchatt.html" class="button">VIEW</a>
-            </div>
-            <div class="card">
-                <h2>Shopping list web app</h2>
-                <p>This is one of my early projects from my front end education, the goal here was to work with forms and events and be able to add new items to a list.</p>
-                <a href="https://sebastianes.github.io/webshop/webshop.html" class="button">VIEW</a>
-            </div>
-            <div class="card">
-                    <h2>Canvas drawing app</h2>
-                    <p>This is one of my first bigger javascript projects that i made during my front end education. The challenge here was to be able to draw different geometrical figures inside the canvas.</p>
-                    <a href="https://sebastianes.github.io/lab3/lab3.html" class="button">VIEW</a>
+        <section id="portfolio-section" class="row">
+            <div class="container">
+                <h1 class="section-header">My Work</h1>
+                <div class="row">
+                    <div class="project-card redux col-sm-6">
+                        <h2>React Redux Shop</h2>
+                        <p>This was a task i had where the goal was to create a webshop that included React JS and Redux. 
+                            This was also one of the first create-react-apps i did when studying front end.</p>
+                            <div class="row">
+                                <a href="https://sebastianes.github.io/react-redux-shop/" class="button">Live Demo</a>
+                            </div>
+                    </div>
+                    <div class="project-card javascriptBig col-sm-6">
+                        <h2>Webb application live chatt</h2>
+                        <p>This is a very simple live chatt, created with some Javascript and firebase.</p>
+                        <div class="row" >
+                            <a href="https://sebastianes.github.io/sebbchatt/sebbchatt.html" class="button">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-card javascriptBig col-sm-6">
+                        <h2>Shopping list web app</h2>
+                        <p>This is one of my early projects from my front end education, 
+                        the goal here was to work with forms and events and be able to add new items to a list.</p>
+                        <div class="row" >
+                            <a href="https://sebastianes.github.io/webshop/webshop.html" class="button">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-card javascriptBig col-sm-6">
+                            <h2>Canvas drawing app</h2>
+                            <p>This is one of my first bigger javascript projects that i made during my front end education. 
+                                The challenge here was to be able to draw different geometrical figures inside the canvas.</p>
+                            <div class="row" >
+                                <a href="https://sebastianes.github.io/lab3/lab3.html" class="button">Live Demo</a>
+                            </div>
+                        </div>
+                        <!--
+                    <div class="project-card col-sm-10 col-sm-offset-1">
+                        <h2>First React app</h2>
+                        <p>This was a small task where i tested out React and made a simple form, the challenge here was to work with state and props.</p>
+                        <a href="https://sebastianes.github.io/task1" class="button">Live Demo</a>
+                    </div>-->
+                        
                 </div>
-            <div class="card">
-                <h2>First React app</h2>
-                <p>This was a small task where i tested out React and made a simple form, the challenge here was to work with state and props.</p>
-                <a href="https://sebastianes.github.io/task1" class="button">VIEW</a>
             </div>
         </section>
         <footer id="footer">
-            <div class="social">
-                <a href="https://www.linkedin.com/in/sebastian-estrada-861025132/" class="linkedin"><i class="fab fa-linkedin fa-5x"></i></a>
-                <a href="https://github.com/sebastianEs" class="github"><i class="fab fa-github fa-5x"></i></a>
-                <a href="https://www.facebook.com/sebastian.estrada.3532" class="facebook"><i class="fab fa-facebook fa-5x"></i></a>
-            </div>
-            <p>Made by Sebastian</p>
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/sebastian-estrada-861025132/" class="linkedin"><i class="fab fa-linkedin fa-5x"></i></a>
+                    <a href="https://github.com/sebastianEs" class="github"><i class="fab fa-github fa-5x"></i></a>
+                    <a href="https://www.facebook.com/sebastian.estrada.3532" class="facebook"><i class="fab fa-facebook fa-5x"></i></a>
+                </div>
+                <p>Made by Sebastian</p>
         </footer> 
     </div>
 
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
